@@ -1,0 +1,94 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="javascript.css">
+<script src="vali.js"></script>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="demo2.html">HOME</a>
+    <a href="#CSS" >CSS</a>
+  <a href="#HTML">HTML</a>
+  <a href="#JAVASCRIPT" class="active">JAVASCRIPT</a>
+  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+            <div class="form1">
+              <form class="iform" onsubmit="return validateForm()">
+                  <table class="table">
+                      <tr>
+                          <td>
+                              <label>Name:</label>
+                          </td>
+                          <td>
+                            <label>Password:</label>
+                        </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input type="text" name="fname" id="i1" autocomplete="off">
+                          </td>
+                          <td>
+                            <input type="password" name="pass" id="i7">
+                        </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <label>Email:</label>
+                          </td>
+                          <td>
+                            <label>Re Enter Password:</label>
+                        </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <input type="text" name="mail" id="i2" autocomplete="off">
+                          </td>
+                          <td>
+                            <input type="password" name="pass2" id="i8">
+                        </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <label> Register For:</label>
+                          </td>
+                          <td>
+                            <label>Phone No.</label>
+                        </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <select id="i3" name="list">
+                                  <option value="0">Choose One</option>
+                                  <option value="HTML">HTML</option>
+                                  <option value="JAVASCRIPT">JAVASCRIPT</option>
+                                  <option value="CSS">CSS</option>
+                              </select>
+                          </td>
+                          <td>
+                            <input type="text" name="Phone" id="i6" autocomplete="off">
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <label>Date:</label>
+                          </td>
+                        
+                          
+                      </tr>
+                      <tr>
+                          <td>
+                              <input type="date" name="date" id="i4" required>
+                          </td>
+                      </tr>
+                </table>
+                <input type="submit" value="SUBMIT" id="i5">
+              </form>
+          </div>
+</body>
+</html>

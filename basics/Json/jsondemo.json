@@ -1,0 +1,25 @@
+{
+    "details":[
+        {
+            "firstname": "Urvish",
+            "lastname": "Tanti",
+            "gender":"male",
+            "email":"urvish@gmail.com",
+            "dob":"07-08-1999"
+        },
+        {
+            "firstname": "abc",
+            "lastname": "xyz",
+            "gender":"female",
+            "email":"abc@gmail.com",
+            "dob":"17-10-2000"
+        },
+        {
+            "firstname": "pqr",
+            "lastname": "stuv",
+            "gender":"male",
+            "email":"pqr@gmail.com",
+            "dob":"27-02-1998"
+        }
+    ]
+}

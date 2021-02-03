@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="reg.css">
+        <Script>
+            function myFunction() 
+              {
+                var a = document.getElementById("myTopnav");
+                if (a.className === "topnav") 
+                {
+                    a.className += " responsive";
+                } else 
+                {
+                    a.className = "topnav";
+                }
+            }
+            document.getElementById('i4').value = Date();
+            function validateForm()
+            {   
+                var w = document.getElementById('i1').value;
+                var x = document.getElementById('i2').value;
+                var y = document.getElementById('i3').value;
+                document.getElementById('i4').value = Date();
+                if(y == "c")
+                {
+                    alert("please select proper topic");
+                    return false;
+                }
+            }
+            </Script>
+    </head>
+    <body>
+        <div class="topnav" id="myTopnav">
+            <a href="demo2.html">HOME</a>
+            <a href="#CSS" >CSS</a>
+            <a href="#HTML">HTML</a>
+            <a href="#JAVASCRIPT" class="active">JAVASCRIPT</a>
+          
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        <div class="form1">
+            <form class="iform" onsubmit="return validateForm()">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <label>Name:</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="fname" id="i1" maxlength="30" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Email:</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="email" name="mail" id="i2" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label> Register For:</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="i3" name="list">
+                                <option value="c">Choose One</option>
+                                <option value="HTML">HTML</option>
+                                <option value="JAVASCRIPT">JAVASCRIPT</option>
+                                <option value="CSS">CSS</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Date:</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="date" name="date" id="i4" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="SUBMIT" id="i5">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="demo2.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    function validateForm() 
+    {
+         var x = document.getElementById("i1").value;
+        var y = document.getElementById("i2").value;
+        if (x == "" || y== "")
+         {
+             alert("please fill details properly");
+             return false;
+        }
+    }
+</script>
+</head>
+<header class="header">
+    <div class="top-nav">
+        <div>
+            <h1 class="p1">Lets Learn</h1>
+        </div>
+        <div class="btn">
+            <ul>
+                <li class="nav-btn">
+            <a href="democss.html" target="_blank">CSS</a>                
+            </li> 
+            <li class="nav-btn">       
+            <a href="demohtml.html" target="_blank">HTML</a>
+                </li>
+                <li class="nav-btn"> 
+            <a href="javascript.html" target="_blank">JAVASCRIPT</a>    
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<body>
+    <div class="bottom"></div>
+    <div class="menu">
+        <div class="fixed">
+        <h1 class="head3">
+            Submit Queries
+        </h1>
+       
+           
+            <div class="form" name="form1" method="POST" onsubmit="return validateForm()">
+                <form>
+                    <input type="text" name="name" placeholder="Enter your name" id="i1" maxlength=30><br>
+
+                    <textarea name="problem" placeholder="Enter your queries" id="i2"></textarea><br>
+                    
+                    <input type="submit" class="i3" value="SUBMIT">
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <div class="main">
+            <div>
+                <h1 class="head">Topics To Look At</h1>
+            </div>
+            <div class="flex">
+                <a href="reg.html" value="javascript" id="a1">
+                <div class="parts" id="p1p">
+                    <div class="img1">
+                    </div>
+                    <p class="p2"><b>JAVASCRIPT</b></p>
+                </div>
+                </a>
+                <a href="reg.html" value="html">
+                <div class="parts"  id="p2p">
+                    <div class="img2">
+                    </div>
+                    <p class="p2"><b>HTML</b></p>
+                </div>
+                </a>
+                <a href="reg.html">
+                <div class="parts" id="p3p">
+                    <div class="img3">
+                    </div>
+                    <p class="p2"><b>CSS</b></p>
+                </div>
+                </a>
+            </div>   
+            <div >
+                <h1 class="head2">Youtube Video Link</h1>
+            </div>
+            <iframe class="video"
+    src="https://www.youtube.com/embed/mU6anWqZJcc">
+    </iframe>    
+        </div> 
+        
+</body>
+</html>

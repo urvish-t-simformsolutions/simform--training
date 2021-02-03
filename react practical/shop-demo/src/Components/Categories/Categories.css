@@ -1,0 +1,54 @@
+hr{
+    margin:0px
+  }
+
+.home-grid{
+    display: grid;
+    grid-row-gap: 30px;
+  }
+  
+  .top-bar{
+    background: white;
+      margin-left: 190px;
+    margin-right: 190px;  
+  }
+  .btn{
+    /* justify-content: space-around; */
+    width: 100px;
+    height:40px;
+    align-items: center; 
+    background: white;
+    border: none; 
+    font-style: bold;  
+  }
+  .btn:hover{
+    color:white ;
+    background: #6F95B4;
+    transition: all 0.3s linear;
+  }
+  .heading{
+    margin: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .func-btn{
+    margin-left: 190px;
+    display: flex;
+    justify-items: center;
+  }
+  .sort-btn{
+    float: left;
+  }
+  .sel-sort{
+      font-size: 16px;
+      border:solid 2px #6F95B4;
+      border-radius: 5px;
+  }
+  input{
+    font-size: 16px;
+      border:solid 2px #6F95B4;
+      border-radius: 5px;
+  }
+  .sea-btn{
+    margin-left: 770px;
+  }

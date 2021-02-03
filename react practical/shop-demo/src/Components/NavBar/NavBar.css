@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    min-height: 7vh;
+    background:#010101;
+    color:white;
+  }
+  .nav-links{
+    width: 50%;
+    margin:auto;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    list-style: none;
+  } 
