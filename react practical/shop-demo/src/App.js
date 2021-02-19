@@ -1,4 +1,3 @@
-
 import './App.css';
 import {BrowserRouter as BroRou, Switch, Route} from 'react-router-dom';
 import Categories from './Components/Categories/Categories';
@@ -11,7 +10,7 @@ function App() {
       <BroRou>
       <Switch>  
         <Route path="/:categoryId" component={Categories}/>
-         <Route path="/" exact component={Categories}/>  
+         <Route path="/" exact component={Categories}/>   
      </Switch>
      </BroRou>
       </div>

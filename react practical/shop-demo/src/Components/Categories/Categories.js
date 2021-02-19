@@ -4,6 +4,11 @@ import items from '../../data/data'
 import { useEffect, useState } from 'react';
 import ListItems from '../ListItems/ListItems'
 import '../Categories/Categories.css'
+//import { connect } from "react-redux";
+import {fetchValue, ALL,BED,PILLOW} from '../../Action'
+import {useDispatch,useSelector} from 'react-redux'
+
+
 
 const allCategories=['All', ...new Set(items.map((item) => item.category))];
 
@@ -12,17 +17,15 @@ const Categories = () => {
   const [categoryItem,setCategoryItem]= useState(allCategories);
   const [itemList,getItemList] = useState(items);
   const [copyList1,setCopyList1] = useState(items);
-  const [categoryName,setCategoryName]= useState('');
-
   const copyItem=[...items];
 
   useEffect(()=>{
     fetchValues(categoryId);
-  },[])
-    //*****************Category ******************* 
+   },[])
+    //*****************get Items by Category ******************* 
 
   const fetchValues = (category)=>{
-    if(categoryId){
+     if(categoryId){
     if(category === 'All') {
       getItemList(copyItem);
       setCopyList1(copyItem);
@@ -33,11 +36,12 @@ const Categories = () => {
       setCopyList1(newItems);
     }
   }
-  else{
-    categoryId='All';
+   else{
+     categoryId='All';
+    }
   }
-  setCategoryName(category)
-  }
+
+
   //************Search Code**************** */
   const searchTerm = value =>{ 
     if(value===''){
@@ -59,16 +63,8 @@ const Categories = () => {
     getItemList(JSON.parse(JSON.stringify(sorted)))
   }
     else if(type === 'default'){
-      if(categoryName === categoryId)
-      { 
-        if(categoryName === 'All'){
-        getItemList(items);
-        }
-        else{
-        const newItems = items.filter((item) => item.category === categoryId);
-        getItemList(JSON.parse(JSON.stringify(newItems)));
-       }
-      }
+      const sorted = copyList1.sort((a, b) => a.id - b.id) 
+      getItemList(JSON.parse(JSON.stringify(sorted)))
     }
   }
 
@@ -81,9 +77,9 @@ const Categories = () => {
 
          {/* Category button */}
 
-        {categoryItem?.map((categoryItem, index) => {
+          {categoryItem?.map((categoryItem,index) => {
           return ( 
-            <Link to={`/${categoryItem}`}>
+             <Link to={`/${categoryItem}`}>
             <button 
                className="btn"
               key={index}
@@ -92,7 +88,7 @@ const Categories = () => {
             </button>
             </Link>  
           );
-        })} 
+        })}        
         </div>
         </div>
          <div className="func-btn">
@@ -101,7 +97,7 @@ const Categories = () => {
 
        <div className="sort-btn">
        <label>Sort by</label>
-       <select onChange={(e)=>sortArr(e.target.value)} className="sel-sort">
+       <select onChange={(e)=>sortArr(e.target.value)} className="sel-sort" >
           <option value="default">Default</option> 
          <option value="asc">By price L-H</option>
          <option value="desc">By price H-L</option>
