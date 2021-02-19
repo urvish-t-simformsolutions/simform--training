@@ -5,10 +5,32 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
-import { createStore } from 'redux'
-import reducer from './Store/Reducer'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
+import thunk from 'redux-thunk'
+import burgerBuilderReducer from './Store/Reducer/burgerBuilder'
+import orderReducer from './Store/Reducer/order'
+import authReducer from './Store/Reducer/auth'
+import createSagaMiddleware from 'redux-saga'
+import { watchAuth, watchBurgerBuilder, watchOrders } from './Store/sagas'
 
-const store = createStore(reducer);
+
+const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) || compose;
+const rootReducer = combineReducers({
+  burgerBuilder: burgerBuilderReducer,
+  order: orderReducer,
+  auth: authReducer
+})
+
+const SagaMiddleware = createSagaMiddleware()
+
+const store = createStore(rootReducer, composeEnhancers(
+  applyMiddleware(thunk, SagaMiddleware)
+));
+
+SagaMiddleware.run(watchAuth)
+SagaMiddleware.run(watchBurgerBuilder)
+SagaMiddleware.run(watchOrders)
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

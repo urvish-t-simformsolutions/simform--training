@@ -4,6 +4,7 @@ import classes from './Input.css'
 const Input = (props) => {
     let inputElement = null
     const inputClasses = [classes.InputElement]
+
     if (props.invalid && props.validation && props.touched) {
         inputClasses.push(classes.Invalid);
     }
@@ -35,12 +36,14 @@ const Input = (props) => {
                 value={props.value} />
             break;
     }
+
     return (
         <div className={classes.Input}>
             <label className={classes.Label}>{props.label}</label>
             {inputElement}
         </div>
     )
+
 }
 
 export default Input
