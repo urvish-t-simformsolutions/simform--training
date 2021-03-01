@@ -1,5 +1,6 @@
 import React from 'react'
 import './Productitems.css'
+import { Link } from 'react-router-dom'
 
 const ProductItems = (props) => {
     console.log(props)
@@ -10,7 +11,12 @@ const ProductItems = (props) => {
                     <div key={itemList.id} className="list">
                         <div className="grid-col">
                             <img src={itemList.image} alt="/" />
-                            <p className="description">{itemList.description}</p>
+                            <Link to={{
+                                pathname: "/productDetail",
+                                state: {
+                                    itemList: itemList,
+                                }
+                            }} className="description">{itemList.name}</Link>
                             <div className="price">
                                 <h4>buy for Rs: {itemList.price} Only</h4>
                             </div>

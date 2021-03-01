@@ -16,9 +16,6 @@
 }
 
 .container{
-
-
-    
     display: flex;
 }
 
@@ -32,4 +29,36 @@
     width:66%;
     height: 1000px;
 
+}
+
+.search input{
+    background-color: #f4edf2;
+    border-radius: 50px;
+    border: 1px solid #f4edf2;
+    padding: 13px 25px;
+    width: 100%;
+    line-height: 22px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+input:focus{
+outline: none;
+}
+
+
+    .sel-sort select{
+        background-color: #f4edf2;
+        border-radius: 50px;
+        border: 1px solid #f4edf2;
+        padding: 13px 25px;
+        color:grey;
+        width: 100%;
+        line-height: 22px;
+        box-sizing: border-box;
+    
+}
+
+select:focus{
+    outline: none;
 }

@@ -6,9 +6,7 @@ const NavigationItem = (props) => {
     return (
         <ul className="NavigationItem">
             <li>
-                <a href="/">
-                    {props.children}
-                </a>
+                {props.children}
             </li>
         </ul>
     )
