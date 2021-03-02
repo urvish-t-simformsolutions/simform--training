@@ -3,7 +3,7 @@ import './Productitems.css'
 import { Link } from 'react-router-dom'
 
 const ProductItems = (props) => {
-    console.log(props)
+
     return (
         <div className='list_container'>
             {props.list.map((itemList) => {
@@ -14,7 +14,7 @@ const ProductItems = (props) => {
                             <Link to={{
                                 pathname: "/productDetail",
                                 state: {
-                                    itemList: itemList,
+                                    item: itemList,
                                 }
                             }} className="description">{itemList.name}</Link>
                             <div className="price">

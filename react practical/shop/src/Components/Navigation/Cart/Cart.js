@@ -4,7 +4,7 @@ import './Cart.css'
 const Cart = () => {
     return (
         <div>
-            <a href="/">
+            <a href="/cart">
                 <i className="fa fa-shopping-cart fa-lg"></i>
             </a>
         </div>

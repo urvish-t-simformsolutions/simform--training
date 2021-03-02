@@ -14,6 +14,10 @@
     margin-right: auto;
 }
 
+.container .img_des{
+    width:100% 
+}
+
 .product_details{
     margin-top: 100px;
     width:900px;
@@ -74,7 +78,7 @@
     margin-top: 60px;
     margin-bottom: 60px;
 }
-.btn_3 {
+.btn_4 {
     display: inline-block;
     padding: 18px 36px;
     text-decoration: none;
@@ -92,7 +96,7 @@
 
 }
 
-.btn_3:hover  {
+.btn_4:hover  {
     background-color: #b08ead;
     color:white;
     text-decoration: none;

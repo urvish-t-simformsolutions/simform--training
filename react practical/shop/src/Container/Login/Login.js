@@ -26,15 +26,16 @@ everyday, and a good example of this is the</p>
                                     Please Sign in now</h3>
                             <form class="form" action="#" method="post" novalidate="novalidate">
                                 <div class="fields">
-                                    <input type="text" id="name" name="name" value="" placeholder="Username" />
+                                    <input type="text" id="name" name="name" placeholder="Username" />
                                 </div>
                                 <div class="fields">
-                                    <input type="password" id="password" name="password" value="" placeholder="Password" />
+                                    <input type="password" id="password" name="password" placeholder="Password" />
                                 </div>
                                 <div className="button">
                                     <button type="submit" value="log in " class="btn_3">
                                         log in
                                         </button>
+                                    <a class="lost_pass" href="/">forget password?</a>
                                 </div>
                             </form>
 
