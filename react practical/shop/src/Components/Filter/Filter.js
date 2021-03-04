@@ -26,15 +26,18 @@ const Filter = (props) => {
                         className="sea-btn" />
 
                 </div>
-                <div className="sel-sort">
-                    Sort By : {props.sortBy}
+                <div className="select-option">
+                    <div className="sel-sort">
+                        Sort By : {props.sortBy}
+                    </div>
                     <div onClick={(e) => props.sortArr(e.target.value)} className="option" >
                         <button value="Low to High">Low to High</button>
                         <button value="High to Low">High to Low</button>
                     </div>
-
-
                 </div>
+
+
+
             </div>
             {reset}
         </>

@@ -12,7 +12,7 @@
 input:focus{
 outline: none;
 }
-
+  
 
 .sel-sort{
         background-color: #f4edf2;
@@ -27,15 +27,22 @@ outline: none;
         
 }
 
-.sel-sort:hover .option{
-    -webkit-transition: .5s;
-    transition: .5s;
+
+.select-option:hover .option{
+    color: gray;
     display:block;
-   
+    background-color: #F4EDF2;
+    border-radius: 10px;
+    border: 1px solid #F4EDF2;
+    padding: 13px 25px;
+    width: 100%;
+    margin-top: 10px;
+
 }
 
 .option{
-    
+    width:0px;
+    transition: width 2s;
     display: none;
 }
 .option > button {

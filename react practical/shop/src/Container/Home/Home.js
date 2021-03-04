@@ -2,13 +2,9 @@ import React from 'react'
 import './Home.css'
 import banner from '../../images/banner.png'
 import bannerP from '../../images/banner_pattern.png'
-import items from '../../data/Data'
-
-const allCategories = [...new Set(items.map((item) => item.category))];
 
 const Home = () => {
 
-    console.log(allCategories);
     return (
         <>
             <section className="banner_part">

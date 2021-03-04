@@ -3,14 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
+import { Provider } from 'react-redux';
+import { createStore } from "redux";
+import reducer from "./Store/Reducer/Reducer"
+import { combineReducers } from 'redux';
+
+const rootReducer = combineReducers({
+  cartDetail: reducer
+})
+const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <React.StrictMode>
-
+  <Provider store={store}>
     <App />
-
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

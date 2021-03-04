@@ -1,0 +1,197 @@
+[
+    {
+        "id": 1,
+        "brand": "AA",
+        "image": "./images/product_list_1.png",
+        "category": "Pillow",
+        "type": "Silentnight Just Like Down Microfibre Pillow",
+        "specs": {
+            "material": "Microfibre",
+            "cover": "100% cotton (machine washable)",
+            "size": [
+                "Standard size"
+            ]
+        },
+        "description": "You’ll have no problem drifting off with this cushioning your head and, as its brand suggests, you could easily be fooled into thinking the soft and fluffy filling is down, whereas its mere microfibre. The result is a well-insulated, warm pillow that comes in at a fraction of the price of a real down one. Moreover, you get two in the pack, making the saving even greater. The pillow spells good news for people with allergies as it’s hypoallergenic and we also like the fact that the whole thing is washable. Unlike down pillows, though, it’s relatively big and bouncy, making it better for side and back sleepers than front ones – and it won’t last as long as real down.",
+        "price": 300
+    },
+    {
+        "id": 2,
+        "brand": "BB",
+        "image": "./images/product_list_2.png",
+        "category": "Pillow",
+        "type": "The Emma Pillow",
+        "specs": {
+            "material": "Airgocell foam, HRX foam, Visco-elastic memory foam",
+            "cover": "98% Polyester, 2% Elastane",
+            "size": [
+                "Standard size"
+            ]
+        },
+        "description": "Featuring three layers of removable foam, the Emma Pillow can be tailored to suit your personal sleeping preference. Each layer possesses different qualities: the Airgocell foam layer is open-pored, improving breathability and heat transfer away from your head, the memory foam layer contours to your head and neck, and the HRX layer provides firmer support for your head and neck. Emma suggests side sleepers use all three layers, while those who sleep on their backs are encouraged to remove a layer, with front sleepers recommended to pick just one of the trio of foam inserts. We tested various combinations and found two layers to be the sweet spot in terms of comfort, support and breathability when sleeping on our side. Your experience may well differ, of course, but we’re confident that no matter your sleeping preference, you’ll find a configuration that works for you. Emma is equally confident and offers a 200-night trial on the pillow. So, if you find it’s not helping deliver the sweet slumber you’re craving, simply return it and get your money back, no questions asked.",
+        "price": 500
+    },
+    {
+        "id": 3,
+        "brand": "AA",
+        "image": "./images/product_list_3.png",
+        "category": "Pillow",
+        "type": "Slumberdown Allergy Protection Pillows",
+        "specs": {
+            "material": "100% Polyester",
+            "cover": "100% cotton",
+            "size": [
+                "Standard size"
+            ]
+        },
+        "description": "f you suffer from allergies or are simply in search of a more hygienic night’s sleep, we highly recommend this affordable two-pack of pillows from Slumberdown. Their polyester filling is specially formulated to help reduce dust mites and the buildup of bacteria and they come with a seal of approval from the country’s leading allergy charity, Allergy UK.  There are three options available: soft support for front sleepers, medium support for back sleepers and firm support for side sleepers. We tested the firm version, which feels springy to the touch and still offers a decent amount of give. Indeed, we found the pillow strikes a keen balance between supporting your neck and head and providing enough cushioning to help you snooze serenely.",
+        "price": 400
+    },
+    {
+        "id": 4,
+        "brand": "CC",
+        "image": "./images/product_list_4.png",
+        "category": "Pillow",
+        "type": "Nectar A Whole Night’s Sleep Pillow",
+        "specs": {
+            "material": "Memory foam and microfibre",
+            "cover": "Tencel cover",
+            "size": [
+                "Standard size"
+            ]
+        },
+        "description": "One of the challenges of buying a new pillow is that one person’s idea of perfection can leave someone else tossing and turning all night. Nectar’s A Whole Night’s Sleep pillow is one of a number of new pillows that aims to overcome this problem by letting you adjust its height. We found it just right straight out of the box, offering fairly firm support with a soft comfort layer on top. However, should you find it too high, you can unzip its cover and remove one of its three layers of memory foam. Despite being made from foam, we also found that the A Whole Night’s Sleep Pillow did a great job of stopping us from getting hot and clammy. This can likely be attributed to its plush Tencel cover, which is filled with technofibre microfibre to offer a down-like feeling. If that’s not enough to convince you, the fact Nectar also makes a donation to mental health campaign #IAMWHOLE for every unit sold may do the trick.",
+        "price": 200
+    },
+    {
+        "id": 5,
+        "brand": "BB",
+        "image": "./images/product_list_5.png",
+        "category": "Pillow",
+        "type": "Scooms Hungarian Goose Down pillow",
+        "specs": {
+            "material": "Goose down and feathers",
+            "cover": "100% cotton cover (machine washable) ",
+            "size": [
+                "Standard size",
+                "king size"
+            ]
+        },
+        "description": "If you’re in the market for a truly luxurious pillow, Scooms' Hungarian goose down pillow ticks pretty much every box. Made from a goose feather and down core surrounded by a 90% down outer chamber, it delivers emphatically on the company’s claim that it’s simultaneously supportive and soft. Scooms' “perfect” pillow is surrounded by a 300 thread count, 100% sateen cotton case and it’s machine washable – which the company recommends you do so every 6-12 months. The down and feathers both adhere to the Responsible Down Standard, meaning they’re sourced from geese that have been treated well and never suffer from live-plucking. The only significant caveat is that to keep the pillow feeling its best, you’ll need to plump it up daily – something that’s not necessary with the foam pillows in this list.",
+        "price": 900
+    },
+    {
+        "id": 6,
+        "brand": "CC",
+        "image": "./images/product_list_6.png",
+        "category": "Pillow",
+        "type": "Tempur Cloud Pillow",
+        "specs": {
+            "material": "Memory foam",
+            "cover": "100% cotton cover (machine washable)",
+            "size": [
+                "Standard size"
+            ]
+        },
+        "description": "Memory foam pillows are the Marmite of the sleep world but don’t jump to conclusions about this unconventional and firmer choice, which can be life-changing. In particular, people suffering from allergies, back and neck pain report feeling almost instant relief from the memory foam that moulds itself into the natural curvature of your neck and head, avoiding pressure points for added comfort. And while there are plenty of rival pillows on the market, we've not found one that comes close in terms of comfort, malleability, support and longevity. Plus, it’s made from extra-soft material and responds to body temperature, so there's no need to wake up to a damp pillow if you get clammy at night.",
+        "price": 750
+    },
+    {
+        "id": 7,
+        "brand": "CC",
+        "image": "./images/product_list_7.png",
+        "category": "Pillow",
+        "type": "Silentnight Eco Comfort Ortho",
+        "specs": {
+            "material": "Polyester “Eco Comfort” fibres",
+            "cover": "98% Polyester, 2% Elastine (machine washable)",
+            "size": [
+                "Standard size"
+            ]
+        },
+        "description": "If you’re a side sleeper, then you won’t have any issues nodding off on the Silentnight Eco Comfort Ortho. Available in both firm and medium support options, the Ortho’s pillow-in-pillow design more effectively relieved pressure on my neck in this position than other pillows I’ve tested, while retaining an impressive amount of softness and comfort. Pair it with one of these mattresses for side sleepers, and you’re golden. Those with allergies will also benefit from its breathable, hypoallergenic cover, which is machine washable up to 40 degrees. And unlike feather pillows, the Comfort Ortho’s polyester filling manages to spring back to shape when not in use, although it’ll still benefit from an occasional plumping up. Part of Silentnight’s ‘Choices’ collection, the Ortho is also filled with fibres made from 100% recycled materials – including 17 plastic bottles – so you can sleep easy, knowing you’re also doing your bit for the environment.",
+        "price": 450
+    },
+    {
+        "id": 8,
+        "brand": "CC",
+        "image": "./images/product_list_8.png",
+        "category": "Pillow",
+        "type": "Eve Memory Foam Pillow",
+        "specs": {
+            "material": "Memory foam",
+            "cover": "No cover",
+            "size": [
+                "Standard size"
+            ]
+        },
+        "description": "It might be made from memory foam, but you shouldn't expect your head to sink into the Eve pillow as if it were a giant marshmallow. Instead, it’ll keep your head propped up all night long – week after week, month after month – making it a great choice if you always find yourself shaking and beating feather and microfibre pillows back into shape to find the support you need. The Eve pillow not only offers a surprising amount of push back, but it’s quite thick too, meaning it’s perfect for people who can’t choose between using one or two pillows. Sure, the firm feel won’t be to everyone’s taste, but the pillow comes with a 30-day trial, so if you don’t get on with it, you can simply send it back for a full refund. Its cover is hypoallergenic, and it can be removed and washed at 40°C. The pillow also has a three-year warranty against manufacturing defects.",
+        "price": 480
+    },
+    {
+        "id": 9,
+        "brand": "AA",
+        "image": "./images/product_list_9.png",
+        "category": "Pillow",
+        "type": " Fine Bedding Company Boutique Silk Pillow",
+        "specs": {
+            "material": "Microfibre blended with 10% pure silk",
+            "cover": "100% cotton (machine washable at 60°C)",
+            "size": [
+                "Standard size"
+            ]
+        },
+        "description": "Silk can absorb up to 30% of its own weight in moisture and still remain dry, making pillows containing silk great for people who get hot and sweaty at night. And as silk is hypoallergenic, it’s good for those who suffer from allergies – and for waking up with clearer and softer skin. This plump one uses 10% pure silk, and the rest is comprised of a patented form of microfibre, which results in a medium-support pillow that’s both breathable and luxurious. We love the fact that it’s always cool to the touch and that it can be washed at 60˚C. Even your hair benefits as silk is less likely to break hair and cause split ends. For the full benefits, go for a silk pillowcase too.",
+        "price": 350
+    },
+    {
+        "id": 10,
+        "brand": "AA",
+        "image": "./images/product_list_10.png",
+        "category": "Pillow",
+        "type": "Dormeo Octasmart Pillow",
+        "specs": {
+            "material": "Wellsleep fibres and memory foam",
+            "cover": "Polyester",
+            "size": [
+                "Standard size",
+                "king size"
+            ]
+        },
+        "description": "The Dormeo Octasmart pillow uses 24 memory foam “springs” to deliver a high level of support and breathability. The manufacturer claims this design is up to eight times more breathable than regular memory foam. Pushing down on the pillow with my hand, I could feel the individual springs and worried it wouldn’t be particularly comfortable. However, the reality was entirely different. If you’re looking for a memory foam pillow that’s supportive without being excessively firm or sweaty, this fits the bill admirably. It’s not as high as the Eve memory foam pillow, which arguably makes it better suited for back and front sleepers than side sleepers, but overall it’s a great all-rounder. The Octasmart’s cover is also machine washable.",
+        "price": 400
+    },
+    {
+        "id": 11,
+        "brand": "BB",
+        "image": "./images/product_list_1.png",
+        "category": "Pillow",
+        "type": "Simba Hybrid Pillow",
+        "specs": {
+            "material": "memory foam and microfibre",
+            "cover": "Cotton and Outlast",
+            "size": [
+                "king size",
+                "Standard size"
+            ]
+        },
+        "description": "The Simba Hybrid Pillow with Stratos is one of the most expensive pillows on this list but it's also one of the most sophisticated. Just like the company’s hybrid mattress, it's made using a combination of different materials: on one side of the pillow, there’s Aerelle fibres encased in astronaut-inspired on the other is a soft, anti-allergy microfibre filling below a layer of premium cotton. You can lay your head on either side but the pillow’s party trick is its “nanocubes” – small memory foam cubes in its core that can be added or removed to adjust both the height and firmness according to your preference. Despite the high-tech credentials, the Simba Hybrid feels surprisingly like a traditional pillow – much more so than some all-foam competitors. Unlike microfibre and feather pillows, which tend to be either soft or supportive but rarely both, the Simba Hybrid finds that sweet spot right out of the box. It's worth noting, however, that unlike the Simba Hybrid mattress, there's no trial period with its bedding products.",
+        "price": 1000
+    },
+    {
+        "id": 12,
+        "brand": "CC",
+        "image": "./images/product_list_2.png",
+        "category": "Pillow",
+        "type": "Otty Deluxe Pillow",
+        "specs": {
+            "material": "Memory foam",
+            "cover": "60% polyester, 40% viscose (machine washable)",
+            "size": [
+                "Standard size"
+            ]
+        },
+        "description": "Typical of most memory foam products, the Otty Deluxe emits an “off-gassing” smell for the first few days, but you shouldn’t let that put you off. Nor should the sight of its slightly boxy profile be a worry. We were sceptical of its flat, angular design at first – unlike the Tempur Cloud Support pillow, it doesn’t slope off at the edges – but after the pillow has adjusted to your body temperature it quickly moulds itself around your head and neck, making for a comfortable night’s sleep. The pillow is made from Otty’s high-density “Cool Blue Gel”-infused memory foam. This might sound like marketing fluff but we were really impressed with how well it regulates temperature and never once woke up feeling hot and clammy. Another point in its favour is that it has a breathable cover that’s both machine washable and hypoallergenic, making it an excellent option for those with allergies.",
+        "price": 380
+    }
+]

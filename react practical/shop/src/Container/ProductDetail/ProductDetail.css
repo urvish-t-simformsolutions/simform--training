@@ -97,6 +97,7 @@
 }
 
 .btn_4:hover  {
+    outline: none;
     background-color: #b08ead;
     color:white;
     text-decoration: none;

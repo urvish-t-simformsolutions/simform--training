@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './Product.css'
-import items from '../../data/Data.js'
+import items from '../../data/pillows.json'
 import ProductItems from '../../Components/ProductItems/ProductItems'
-import { Link } from 'react-router-dom'
+
 import Filter from '../../Components/Filter/Filter'
 
 //import Search from '../../Components/Filter/Search/Search'
@@ -10,19 +10,18 @@ import Filter from '../../Components/Filter/Filter'
 
 
 const Product = (props) => {
+
     const temp = [...items]
     const [itemList, setItemList] = useState(temp)
     const [copyList1, setCopyList1] = useState(temp);
     const [offSet, setOffSet] = useState(6);
     const [sortBy, setSortby] = useState("");
 
-
     useEffect(() => {
+
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-
     const handleScroll = (event) => {
         const scrollTop =
             (document.documentElement?.scrollTop) ||
@@ -49,7 +48,7 @@ const Product = (props) => {
             setItemList(temp)
         }
         else {
-            const newTerm = copyList1.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
+            const newTerm = copyList1.filter((item) => item.type.toLowerCase().includes(value.toLowerCase()))
             setItemList(newTerm)
         }
     }
@@ -70,8 +69,6 @@ const Product = (props) => {
         }
     }
 
-
-
     return (
         <>
             <section>
@@ -88,10 +85,10 @@ const Product = (props) => {
                     <div className="product_list" onScroll={handleScroll}>
                         <ProductItems list={itemList.slice(0, offSet)} />
                     </div>
+
                 </div>
 
             </section>
-
         </>
 
     )

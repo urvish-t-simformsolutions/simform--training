@@ -16,7 +16,7 @@ const ProductItems = (props) => {
                                 state: {
                                     item: itemList,
                                 }
-                            }} className="description">{itemList.name}</Link>
+                            }} className="description">{itemList.type}</Link>
                             <div className="price">
                                 <h4>buy for Rs: {itemList.price} Only</h4>
                             </div>

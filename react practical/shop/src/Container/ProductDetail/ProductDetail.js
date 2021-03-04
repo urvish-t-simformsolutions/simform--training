@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import TableDetail from '../../Components/TableDetail/TableDetail'
 import './ProductDetail.css'
+import * as actions from '../../Store/Action'
+import { connect } from 'react-redux'
 
 
 const ProductDetail = (props) => {
+    console.log(props)
 
     const [value, setValue] = useState(1)
     const [price, setPrice] = useState(props.location.state.item.price)
@@ -24,38 +29,70 @@ const ProductDetail = (props) => {
         <>
             <section className="pd_bg">
             </section>
-            <div className="fullimage">
-                <div className="container">
-                    <img className="img_des" src={props.location.state.item.image} alt="/"></img>
-                </div>
-                <div className="product_details">
-                    <div className="info">
-                        <h3>{props.location.state.item.description}:{props.location.state.item.id} </h3>
-                        <h3>  rebound pillows </h3>
-                        <p>
-                            Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
-</p>
+            <section>
+                <div className="fullimage">
+                    <div className="container">
+                        <img className="img_des" src={props.location.state.item.image} alt="/"></img>
                     </div>
-                    <div className="card_area">
-                        <div className="product_count_area">
-                            <p>Quantity</p>
-                            <div className="product_count ">
-                                <span className="product_count_item " onClick={decrement}> <i className="fa fa-minus"></i></span>
-                                <input className="product_count_item " type="text" value={value} min="0" max="10" />
-                                <span className="product_count_item" onClick={increment}> <i className="fa fa-plus"></i></span>
+                    <div className="product_details">
+                        <div className="info">
+                            <h3>{props.location.state.item.type} </h3>
+
+                            <p>
+                                {props.location.state.item.description}
+                            </p>
+                        </div>
+                        <TableDetail item={props.location.state.item} />
+
+                        <div className="card_area">
+                            <div className="product_count_area">
+                                <p>Quantity</p>
+                                <div className="product_count ">
+                                    <span className="product_count_item " onClick={decrement}> <i className="fa fa-minus"></i></span>
+                                    <input className="product_count_item " type="text" value={value} min="0" max="10" />
+                                    <span className="product_count_item" onClick={increment}> <i className="fa fa-plus"></i></span>
+                                </div>
+
+                                <p>Rs: {price}</p>
+
                             </div>
-
-                            <p>Rs: {price}</p>
-
-                        </div>
-                        <div className="add_to_cart">
-                            <a href="/cart" className="btn_4" onClick={() => props.addToCart(props.item, value, price)}>add to cart</a>
+                            <div className="add_to_cart" >
+                                <button
+                                    onClick={() => { props.onAddToCart(props.location.state.item, value, price) }}
+                                    // to={{
+                                    //     pathname: "/Cart",
+                                    //     state: {
+                                    //         item: props.location.state.item,
+                                    //         quantity: value,
+                                    //         price: price
+                                    //     }
+                                    // }} 
+                                    className="btn_4"
+                                // onClick={() => props.addToCart(props.item, value, price)}
+                                > add to cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+
         </>
     )
 }
 
-export default ProductDetail
+// const mapStateToProps = state => {
+//     return {
+//         cart: state.cardDetail.cart,
+//         quantity: state.cardDetail.quantity,
+//         price: state.cardDetail.price
+//     }
+// }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAddToCart: (cart, quantity, price) => dispatch(actions.addToCart(cart, quantity, price))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(ProductDetail)

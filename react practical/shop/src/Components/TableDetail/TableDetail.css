@@ -1,0 +1,32 @@
+.specs{
+
+    padding-top: 50px;
+ }
+ 
+ .specs-detail{
+     width: 100%;
+ }
+ 
+ .specs-detail tr{
+     border:none;
+ }
+ 
+ .specs-detail  th{
+     padding-bottom: 10px;
+     font-size: 18px;
+     padding-top: 20px;
+     text-align: center;
+     color: white;
+     background-color: #caa7c7;
+ }
+ .specs-detail td{
+    justify-content: space-between;
+     background-color: rgb(248, 244, 244);
+ }
+
+ span .size-detail{
+     color: rgb(34, 34, 34);
+     margin:0 17.7%;
+     float: left;
+     text-align: center;
+ }
