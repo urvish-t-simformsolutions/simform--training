@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 
 
 const ProductDetail = (props) => {
-    console.log(props)
 
     const [value, setValue] = useState(1)
     const [price, setPrice] = useState(props.location.state.item.price)
@@ -49,7 +48,10 @@ const ProductDetail = (props) => {
                                 <p>Quantity</p>
                                 <div className="product_count ">
                                     <span className="product_count_item " onClick={decrement}> <i className="fa fa-minus"></i></span>
-                                    <input className="product_count_item " type="text" value={value} min="0" max="10" />
+                                    <span className="product_count_item value"
+                                    >
+                                        {value}
+                                    </span>
                                     <span className="product_count_item" onClick={increment}> <i className="fa fa-plus"></i></span>
                                 </div>
 
@@ -58,17 +60,8 @@ const ProductDetail = (props) => {
                             </div>
                             <div className="add_to_cart" >
                                 <button
-                                    onClick={() => { props.onAddToCart(props.location.state.item, value, price) }}
-                                    // to={{
-                                    //     pathname: "/Cart",
-                                    //     state: {
-                                    //         item: props.location.state.item,
-                                    //         quantity: value,
-                                    //         price: price
-                                    //     }
-                                    // }} 
+                                    onClick={() => { props.onAddToCart(props.location.state.item, value) }}
                                     className="btn_4"
-                                // onClick={() => props.addToCart(props.item, value, price)}
                                 > add to cart</button>
                             </div>
                         </div>
@@ -81,17 +74,10 @@ const ProductDetail = (props) => {
     )
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         cart: state.cardDetail.cart,
-//         quantity: state.cardDetail.quantity,
-//         price: state.cardDetail.price
-//     }
-// }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAddToCart: (cart, quantity, price) => dispatch(actions.addToCart(cart, quantity, price))
+        onAddToCart: (cart, quantity) => dispatch(actions.addToCart(cart, quantity))
     }
 }
 

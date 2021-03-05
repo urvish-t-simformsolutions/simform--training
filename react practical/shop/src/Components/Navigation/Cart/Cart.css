@@ -3,5 +3,18 @@
 } 
 
 .fa-shopping-cart{
+    font-size: 35px;
+    position: relative;
     color:#b08ead
+}
+.cart-value{
+    top:10px;
+    padding:auto;
+    right:250px;
+    position:absolute;
+    color:white;
+    text-align: center;
+    width: 25px;
+    background-color:#b08ead;
+    border-radius: 50%;
 }

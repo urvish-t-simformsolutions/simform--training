@@ -54,3 +54,62 @@ td .cart-name{
     height: 200px;
     font-size: 18px;
 }
+.empty-bucket{
+    font-size: 30px;
+    margin: auto;
+}
+
+.total-price {
+height: 70px;
+}
+
+.total-price td{
+    text-align: center;
+}
+
+.product_count {
+    border: 1px solid #795376;
+    margin: 0 35px;
+    display: inline-block!important;
+}
+.product_count .product_count_item {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+}
+.product_count .product_count_item {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn_5{
+    display: block;
+    width: 15%;
+    text-align: center;
+    margin: 30px 0 17px;
+    padding: 5px 0;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #b08ead;
+    font-size: 15px;
+    font-weight: 700;
+    color: #b08ead;
+    text-transform: uppercase;
+    font-weight: 400;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+ .btn_5:hover  {
+    background-color: #b08ead;
+    color:white;
+    text-decoration: none;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+

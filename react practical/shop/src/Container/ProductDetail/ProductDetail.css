@@ -62,12 +62,7 @@
     text-align: center;
     display: inline-block;
 }
-.card_area .product_count input {
-    background-color: #795376;
-    color: #fff;
-    border: 1px solid #795376;
-    color: #fff;
-}
+
 
 .card_area .product_count_area p {
     margin-top: 0!important;
@@ -103,4 +98,9 @@
     text-decoration: none;
     -webkit-transition: .5s;
     transition: .5s;
+}
+
+.value{
+    color: #fff;
+    background-color: #b08ead;
 }

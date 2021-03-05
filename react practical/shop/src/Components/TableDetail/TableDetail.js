@@ -36,8 +36,8 @@ const TableDetail = (props) => {
                             Sizes available
             </th>
                         <td>
-                            {props.item.specs.size.map((element) => {
-                                return <span className="size-detail">{element}</span>
+                            {props.item.specs.size.map((element, i) => {
+                                return <span className="size-detail" key={i}>{element}</span>
                             })}
                         </td>
                     </tr>

@@ -1,4 +1,8 @@
 export {
-    addToCart
+    addToCart,
+    increment,
+    decrement,
+    priceUpdate,
+    removeFromCart
 }
-from './cartAction'
+    from './cartAction'
