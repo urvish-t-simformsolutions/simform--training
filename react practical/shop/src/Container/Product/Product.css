@@ -30,7 +30,34 @@
 .product_list{
     width:66%;
     height: auto;
+}
 
+.faq-button{
+    display: flex;
+    justify-content: center;
+
+}
+.faq-btn{
+    text-align: center;
+    width: 10%;
+    padding: 18px 36px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #b08ead;
+    font-size: 15px;
+    font-weight: 700;
+    color: #b08ead;
+    text-transform: uppercase;
+    font-weight: 400;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.faq-btn:hover  {
+    background-color: #b08ead;
+    color:white;
+    text-decoration: none;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 

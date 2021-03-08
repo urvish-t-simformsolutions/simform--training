@@ -1,0 +1,46 @@
+.newsletter{
+    background-color: #4B3049;
+}
+.news-contain{
+    max-width: 1170px;
+    justify-content: center!important;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+   margin:auto;
+    text-align: center;
+}
+.news-item{
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+.news-contain h1{
+    color:#fff;
+}
+.news-contain p{
+    color:#fff;
+}
+.subscribe_form{
+    margin: 0 auto;
+    margin-top: 45px;
+    position: relative;
+    max-width: 558px;
+}
+.subscribe_form input {
+    border: 1px solid #fff;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 50px;
+    padding: 29px 30px;
+    line-height: 20px;
+    overflow: visible;
+}
+.subscribe_form .btn_1 {
+    padding: 15px 30px;
+    line-height: 16px;
+    border-radius: 50px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}

@@ -4,6 +4,7 @@ import TableDetail from '../../Components/TableDetail/TableDetail'
 import './ProductDetail.css'
 import * as actions from '../../Store/Action'
 import { connect } from 'react-redux'
+import Newsletter from '../../Components/Newsletter/Newsletter'
 
 
 const ProductDetail = (props) => {
@@ -69,7 +70,7 @@ const ProductDetail = (props) => {
                 </div>
             </section>
 
-
+            <Newsletter />
         </>
     )
 }

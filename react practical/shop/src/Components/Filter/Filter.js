@@ -23,6 +23,7 @@ const Filter = (props) => {
                     <input type='text'
                         placeholder="Search....."
                         onChange={(e) => props.searchTerm(e.target.value)}
+                        value={props.searchField}
                         className="sea-btn" />
 
                 </div>

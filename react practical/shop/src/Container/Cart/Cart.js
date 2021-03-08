@@ -13,9 +13,36 @@ class Cart extends Component {
         this.props.onPriceUpdate()
     }
 
+    state = {
+        updateCart: false,
+        toggle: false,
+
+    }
+
+    onClick = this.onClick.bind(this);
+    decrementValue = this.decrementValue.bind(this);
+    incrementValue = this.incrementValue.bind(this);
 
 
+    onClick() {
+        this.setState((currentState) => ({
+            updateCart: !currentState.updateCart,
+        }))
+    }
+    decrementValue(i) {
+        this.props.onDecrement(i)
+        this.setState((currentState) => ({
+            toggle: !currentState.toggle,
+        }))
+    }
+    incrementValue(i) {
+        this.props.onIncrement(i)
+        this.setState((currentState) => ({
+            toggle: !currentState.toggle,
+        }))
+    }
     render() {
+
 
 
 
@@ -23,7 +50,7 @@ class Cart extends Component {
         if (this.props.cart.length < 1) {
             bucket = (
                 <div className="empty-bucket">
-                    Your Cart is Empty
+                    Your Cart is Empty :(
                 </div>
             )
         } else {
@@ -32,21 +59,12 @@ class Cart extends Component {
                     <table>
                         <tbody>
                             <tr>
-                                <th className="product">
-                                    Product
-                    </th>
-                                <th>
-                                    Price
-                    </th>
-                                <th>
-                                    Quantity
-                    </th>
-                                <th>
-                                    Total
-                    </th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
                             </tr>
                             {this.props.cart.map((item, i) => {
-
                                 return (
                                     <tr key={i}>
                                         <td >
@@ -55,25 +73,28 @@ class Cart extends Component {
                                                 <span className="cart-name">{item.cart.type}</span>
                                             </div>
                                             <div>
-                                                <button type="submit" className="btn_5" onClick={() => this.props.onRemoveFromCart(i)}>
-                                                    Remove
-                                        </button>
+                                                {this.state.updateCart ?
+                                                    <button type="submit" className="btn_5"
+                                                        onClick={() => this.props.onRemoveFromCart(i)}>
+                                                        Remove
+                                                    </button>
+                                                    : null}
                                             </div>
                                         </td>
                                         <td >
                                             <strong> Rs: {item.cart.price}</strong>
                                         </td>
                                         <td>
-
-                                            <div className="product_count ">
-                                                <span className="product_count_item " onClick={() => this.props.onDecrement(i)}> <i className="fa fa-minus"></i></span>
-                                                <span className="product_count_item value"
-                                                //type="text" value={value} min="0" max="10" 
-                                                >
-                                                    {item.quantity}
-                                                </span>
-                                                <span className="product_count_item" onClick={() => this.props.onIncrement(i)}> <i className="fa fa-plus"></i></span>
-                                            </div>
+                                            {this.state.updateCart ?
+                                                <div className="product_count ">
+                                                    <span className="product_count_item " onClick={() => this.decrementValue(i)}> <i className="fa fa-minus"></i></span>
+                                                    <span className="product_count_item value"
+                                                    //type="text" value={value} min="0" max="10" 
+                                                    >
+                                                        {item.quantity}
+                                                    </span>
+                                                    <span className="product_count_item" onClick={() => this.incrementValue(i)}> <i className="fa fa-plus"></i></span>
+                                                </div> : item.quantity}
 
                                         </td>
                                         <td>
@@ -82,9 +103,19 @@ class Cart extends Component {
                                     </tr>
                                 )
                             })}
+                            <tr >
+                                <td className="update-cart"> <button
+                                    onClick={this.onClick}
+                                    className="btn_4"> {this.state.updateCart ? 'Save Changes' : 'Update Cart'}</button>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
                             <tr className="total-price">
-                                <td>                                </td>
-                                <td>                                </td>
+                                <td></td>
+                                <td></td>
                                 <td>
                                     <h4>
                                         Subtotal:
@@ -98,7 +129,6 @@ class Cart extends Component {
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
             )
         }

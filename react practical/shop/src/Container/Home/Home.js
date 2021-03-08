@@ -2,6 +2,8 @@ import React from 'react'
 import './Home.css'
 import banner from '../../images/banner.png'
 import bannerP from '../../images/banner_pattern.png'
+import Feature from '../../Components/Feature/Feature'
+import Newsletter from '../../Components/Newsletter/Newsletter'
 
 const Home = () => {
 
@@ -85,6 +87,8 @@ const Home = () => {
                     </div>
                 </div>
             </section> */}
+            <Feature />
+            <Newsletter />
         </>
     )
 }

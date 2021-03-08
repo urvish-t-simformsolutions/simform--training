@@ -4,6 +4,9 @@ import items from '../../data/pillows.json'
 import ProductItems from '../../Components/ProductItems/ProductItems'
 
 import Filter from '../../Components/Filter/Filter'
+import { Link } from 'react-router-dom'
+import Feature from '../../Components/Feature/Feature'
+import Newsletter from '../../Components/Newsletter/Newsletter'
 
 //import Search from '../../Components/Filter/Search/Search'
 //import Sort from '../../Components/Filter/Sort/Sort'
@@ -16,6 +19,7 @@ const Product = (props) => {
     const [copyList1, setCopyList1] = useState(temp);
     const [offSet, setOffSet] = useState(6);
     const [sortBy, setSortby] = useState("");
+    const [searchField, setSearchField] = useState("")
 
     useEffect(() => {
 
@@ -31,19 +35,20 @@ const Product = (props) => {
             document.body.scrollHeight;
 
 
-        if (scrollTop + window.innerHeight + 10 >= scrollHeight) {
+        if (scrollTop + window.innerHeight + 2000 >= scrollHeight) {
             return setOffSet(prev => prev + 6)
         }
     }
 
     const reset = () => {
-        // sortArr('');
         setSortby('')
         setItemList(items)
+        setSearchField("")
 
     }
 
     const searchTerm = value => {
+        setSearchField(value)
         if (value === '') {
             setItemList(temp)
         }
@@ -80,7 +85,7 @@ const Product = (props) => {
             <section className="section_padding">
                 <div className="container">
                     <div className="form_items">
-                        <Filter sortBy={sortBy} sortArr={sortArr} searchTerm={searchTerm} reset={reset} />
+                        <Filter sortBy={sortBy} sortArr={sortArr} searchTerm={searchTerm} reset={reset} searchField={searchField} />
                     </div>
                     <div className="product_list" onScroll={handleScroll}>
                         <ProductItems list={itemList.slice(0, offSet)} />
@@ -89,6 +94,15 @@ const Product = (props) => {
                 </div>
 
             </section>
+
+            <div className="faq-button">
+                <Link to="/faq" className="faq-btn">
+                    FAQ
+                </Link>
+
+            </div>
+            <Feature />
+            <Newsletter />
         </>
 
     )
