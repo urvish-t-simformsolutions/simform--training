@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Logo from '../Logo/Logo'
+import Logo from '../../Logo/Logo'
 import './Footer.css'
 
 const Footer = () => {
     return (
         <>
-            <footer class="footer_part">
+            <footer className="footer_part">
                 <div className="footer_top">
                     <div className="footer_nav">
                         <div className="foot_logo">
@@ -20,10 +20,10 @@ const Footer = () => {
                             <Link to="/contact">Contact</Link>
                         </div>
                         <div className="footer_social">
-                            <Link to="/">  <i class="fa fa-facebook"></i></Link>
-                            <Link to="/">  <i class="fa fa-instagram"></i></Link>
-                            <Link to="/">  <i class="fa fa-google-plus"></i></Link>
-                            <Link to="/">  <i class="fa fa-linkedin"></i></Link>
+                            <Link to="/">  <i className="fa fa-facebook"></i></Link>
+                            <Link to="/">  <i className="fa fa-instagram"></i></Link>
+                            <Link to="/">  <i className="fa fa-google-plus"></i></Link>
+                            <Link to="/">  <i className="fa fa-linkedin"></i></Link>
                         </div>
                     </div>
 

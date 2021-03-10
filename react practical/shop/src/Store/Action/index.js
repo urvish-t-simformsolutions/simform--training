@@ -3,6 +3,7 @@ export {
     increment,
     decrement,
     priceUpdate,
-    removeFromCart
+    removeFromCart,
+    setData
 }
     from './cartAction'

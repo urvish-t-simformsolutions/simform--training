@@ -2,8 +2,8 @@ import React from 'react'
 import './Home.css'
 import banner from '../../images/banner.png'
 import bannerP from '../../images/banner_pattern.png'
-import Feature from '../../Components/Feature/Feature'
-import Newsletter from '../../Components/Newsletter/Newsletter'
+import Feature from '../../Components/fixPageComp/Feature/Feature'
+import Newsletter from '../../Components/fixPageComp/Newsletter/Newsletter'
 
 const Home = () => {
 

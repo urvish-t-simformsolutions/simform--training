@@ -7,7 +7,6 @@ class CartIcon extends Component {
 
     render() {
 
-        console.log(this.props.cart.length)
         let cart = null
         if (this.props.cart.length > 0) {
             cart = (

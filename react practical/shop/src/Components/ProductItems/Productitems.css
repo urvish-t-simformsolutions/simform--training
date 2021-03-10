@@ -3,7 +3,7 @@
     grid-template-columns: auto auto;
     justify-items: center;
 }
-.list{
+.list_container .list{
     width:90%;
     height: auto;
 }

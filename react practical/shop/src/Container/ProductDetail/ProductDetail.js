@@ -4,7 +4,7 @@ import TableDetail from '../../Components/TableDetail/TableDetail'
 import './ProductDetail.css'
 import * as actions from '../../Store/Action'
 import { connect } from 'react-redux'
-import Newsletter from '../../Components/Newsletter/Newsletter'
+import Newsletter from '../../Components/fixPageComp/Newsletter/Newsletter'
 
 
 const ProductDetail = (props) => {

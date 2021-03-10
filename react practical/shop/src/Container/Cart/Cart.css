@@ -120,12 +120,12 @@ height: 70px;
     padding: 18px 36px;
     text-decoration: none;
     border-radius: 5px;
-    background-color: transparent;
+    background-color: #b08ead;
     border: 1px solid #b08ead;
     font-size: 15px;
     font-weight: 700;
-    color: #b08ead;
-    text-transform: uppercase;
+    color: white;
+    text-transform: capitalize;
     font-weight: 400;
     -webkit-transition: .5s;
     transition: .5s;
@@ -135,8 +135,35 @@ height: 70px;
 
 .update-cart .btn_4:hover  {
     outline: none;
+    background-color: white;
+    color:#b08ead;
+    text-decoration: none;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.btn_6{
+    display: block;
+    margin-top: 30px;
+    float:right;
+    padding: 18px 36px;
+    text-decoration: none;
+    border-radius: 5px;
     background-color: #b08ead;
-    color:white;
+    border: 1px solid #b08ead;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 400;
+    -webkit-transition: .5s;
+    transition: .5s;
+    
+}
+.btn_6:hover  {
+    outline: none;
+    background-color: white;
+    color:#b08ead;
     text-decoration: none;
     -webkit-transition: .5s;
     transition: .5s;

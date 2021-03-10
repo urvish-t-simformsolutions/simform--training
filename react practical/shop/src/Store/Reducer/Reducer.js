@@ -3,8 +3,17 @@ import * as actionTypes from "../Action/actionType";
 
 
 const initialState = {
+    pillows: [],
     cart: [],
     totalPrice: 0,
+}
+
+const setData = (state, action) => {
+    console.log(state)
+    return {
+        ...state,
+        pillows: action.data
+    }
 }
 
 const priceUpdate = (state, action) => {
@@ -22,9 +31,7 @@ const addToCart = (state, action) => {
     console.log("bbhhb", action)
     return {
         ...state,
-        cart: state.cart.concat([action.cart]),
-        //totalPrice: state.totalPrice + (action.cart.cart.price * action.cart.quantity)
-
+        cart: state.cart.concat([action.cart])
     }
 }
 
@@ -49,7 +56,7 @@ const increment = (state, action) => {
         if (i === action.index && item.quantity < 10) {
             item.quantity = item.quantity + 1;
         }
-      //  console.log("after", item.quantity)
+        //  console.log("after", item.quantity)
     })
     priceUpdate(state, action)
     // console.log(state)
@@ -61,10 +68,10 @@ const increment = (state, action) => {
 
 
 const decrement = (state, action) => {
-    state.cart.map((item, i) => {    
+    state.cart.map((item, i) => {
         if (i === action.index && item.quantity > 1) {
             item.quantity = item.quantity - 1;
-        }   
+        }
     })
     priceUpdate(state, action)
     return {
@@ -78,6 +85,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.DECREMENT_QUANTITY: return decrement(state, action)
         case actionTypes.PRICE_UPDATE: return priceUpdate(state, action)
         case actionTypes.REMOVE_FROM_CART: return removeFromCart(state, action)
+        case actionTypes.SET_DATA: return setData(state, action)
+
 
         default:
             return state

@@ -1,10 +1,10 @@
 import React from 'react'
 import './Feature.css'
-import feature1 from '../../images/feature_icon_1.svg'
-import feature2 from '../../images/feature_icon_2.svg'
-import feature3 from '../../images/feature_icon_3.svg'
+import feature1 from '../../../images/feature_icon_1.svg'
+import feature2 from '../../../images/feature_icon_2.svg'
+import feature3 from '../../../images/feature_icon_3.svg'
 
-import feature4 from '../../images/feature_icon_4.svg'
+import feature4 from '../../../images/feature_icon_4.svg'
 
 const Feature = () => {
     return (

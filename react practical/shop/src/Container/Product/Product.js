@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react'
 import './Product.css'
 import items from '../../data/pillows.json'
 import ProductItems from '../../Components/ProductItems/ProductItems'
-
+import * as actions from '../../Store/Action'
 import Filter from '../../Components/Filter/Filter'
 import { Link } from 'react-router-dom'
-import Feature from '../../Components/Feature/Feature'
-import Newsletter from '../../Components/Newsletter/Newsletter'
+import Feature from '../../Components/fixPageComp/Feature/Feature'
+import Newsletter from '../../Components/fixPageComp/Newsletter/Newsletter'
+import { connect, useDispatch, useSelector } from 'react-redux'
 
 //import Search from '../../Components/Filter/Search/Search'
 //import Sort from '../../Components/Filter/Sort/Sort'
-
+ 
 
 const Product = (props) => {
 
@@ -21,8 +22,12 @@ const Product = (props) => {
     const [sortBy, setSortby] = useState("");
     const [searchField, setSearchField] = useState("")
 
-    useEffect(() => {
+    const pillows = useSelector(state => state.cartDetail.pillows);
+    const setData = useDispatch(actions.setData());
 
+    console.log(pillows)
+    useEffect(() => {
+        setData();
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -108,4 +113,16 @@ const Product = (props) => {
     )
 }
 
-export default Product 
+// const mapStateToProps = (state) => {
+//     return {
+//         // pillows: state.CartDetail.pillows
+//     }
+// }
+
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         setData: () => dispatch(actions.setData)
+//     }
+// }
+
+export default Product

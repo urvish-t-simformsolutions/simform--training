@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../Components/Footer/Footer'
-import Toolbar from '../Components/Navigation/Toolbar/Toolbar'
+import Footer from '../Components/fixPageComp/Footer/Footer'
+import Toolbar from '../Components/fixPageComp/Navigation/Toolbar/Toolbar'
 const Layout = (props) => {
     return (
         <>

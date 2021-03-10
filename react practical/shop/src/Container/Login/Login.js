@@ -58,10 +58,10 @@ everyday, and a good example of this is the</p>
 
                             <form className="form" onSubmit={handleSubmit}>
                                 <div className="fields">
-                                    <input type="email" id="name" name="name" placeholder="Enter your Email" defaultValue="" ref={emailRef} />
+                                    <input className="input" type="email" id="name" name="name" placeholder="Enter your Email" defaultValue="" ref={emailRef} />
                                 </div>
                                 <div className="fields">
-                                    <input type="password" id="password" placeholder="Password" defaultValue="" ref={passwordRef} />
+                                    <input className="input" type="password" id="password" placeholder="Password" defaultValue="" ref={passwordRef} />
                                 </div>
 
                                 <div className="button">

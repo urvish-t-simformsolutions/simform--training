@@ -62,13 +62,13 @@ everyday, and a good example of this is the</p>
 
                             <form className="form" onSubmit={handleSubmit}>
                                 <div className="fields">
-                                    <input type="email" id="name" name="name" placeholder="Enter your Email" defaultValue="" ref={emailRef} />
+                                    <input className="inputs" type="email" id="name" name="name" placeholder="Enter your Email" defaultValue="" ref={emailRef} />
                                 </div>
                                 <div className="fields">
-                                    <input type="password" id="password" placeholder="Password" defaultValue="" ref={passwordRef} />
+                                    <input className="inputs" type="password" id="password" placeholder="Password" defaultValue="" ref={passwordRef} />
                                 </div>
                                 <div className="fields">
-                                    <input type="password" id="confirmPassword" placeholder="Confirm Password" defaultValue="" ref={confirmPassRef} />
+                                    <input className="inputs" type="password" id="confirmPassword" placeholder="Confirm Password" defaultValue="" ref={confirmPassRef} />
                                 </div>
                                 <div className="button">
                                     <button disabled={loading} type="submit" className="btn_3">

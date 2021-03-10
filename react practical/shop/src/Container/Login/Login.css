@@ -126,7 +126,7 @@
     margin-bottom: 1rem;
 }
 
-input {
+.input {
     border: 0 solid transparent;
     border-bottom: 1px solid #ddd;
     border-radius: 0;

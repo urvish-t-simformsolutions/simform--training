@@ -1,0 +1,124 @@
+.checkout_container{
+    width: 100%;
+    height:400px;
+    background-color: #b08ead;
+    display: grid;
+}
+
+.checkout_container h1{
+    font-size: 50px;
+    color:white;
+    margin: auto;
+}
+
+.checkout_contain{
+    max-width: 1170px;
+    margin: auto;
+}
+.detail_order{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.bill_detail{
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+.bill_detail h3 {
+    font-size: 18px;
+    color: #2a2a2a;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.order_sum{
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.order_sum .order_detail{
+    background: #f4f4f4;
+    padding: 30px;
+}
+
+.order_detail h2 {
+    border-bottom: 1px solid #dddddd;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2a2a2a;
+    padding-bottom: 15px;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.order_detail .list li{
+    font-size: 14px;
+    color: #795376;
+    font-weight: normal;
+    border-bottom: 1px solid #eeeeee;
+    display: block;
+    line-height: 42px;
+}
+.order_detail  .list li span{
+    float: right;
+}
+.order_detail .list li .first{
+    line-height: 20px;
+    display: inline-block;
+    float: none;
+    width:110px;
+}
+.order_detail  .list li .middle{
+    float: right;
+    width: 50px;
+    text-align: right;
+    display: inline-block;
+    margin-right:60px;
+    color: #2a2a2a;
+}
+
+.order_detail .list_2 li {
+    text-transform: uppercase;
+    color: #2a2a2a;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.order_detail .list_2 li span{
+    text-transform: capitalize;
+    color: #795376;
+
+}
+
+.btn_7{
+    display: inline-block;
+    margin: 30px 45px;
+    padding: 18px 36px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #b08ead;
+    font-size: 15px;
+    font-weight: 700;
+    color: #b08ead;
+    text-transform: capitalize;
+    font-weight: 400;
+    -webkit-transition: .5s;
+    transition: .5s;
+    
+}
+.btn_7:hover  {
+    outline: none;
+    background-color: #b08ead;
+    color:white;
+    text-decoration: none;
+    -webkit-transition: .5s;
+    transition: .5s;
+}

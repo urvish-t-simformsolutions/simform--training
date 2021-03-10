@@ -2,12 +2,20 @@ import React, { Component } from 'react'
 import './Cart.css'
 import * as actions from '../../Store/Action'
 import { connect } from 'react-redux'
-
+import { Link } from 'react-router-dom'
+import axios from "axios";
 
 class Cart extends Component {
 
     componentDidMount() {
         this.props.onPriceUpdate()
+        axios.get("https://auth-development-5a0c3-default-rtdb.firebaseio.com/pillows.json")
+            .then(res => {
+                console.log(res);
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
     componentDidUpdate() {
         this.props.onPriceUpdate()
@@ -129,6 +137,7 @@ class Cart extends Component {
                             </tr>
                         </tbody>
                     </table>
+                    <Link className="btn_6" to="/checkout">Proceed to checkout</Link>
                 </div>
             )
         }
