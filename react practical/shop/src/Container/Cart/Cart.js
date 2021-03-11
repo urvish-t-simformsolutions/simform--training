@@ -3,19 +3,20 @@ import './Cart.css'
 import * as actions from '../../Store/Action'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import axios from "axios";
+//import axios from "axios";
 
 class Cart extends Component {
 
     componentDidMount() {
+        //this.props.setData()
         this.props.onPriceUpdate()
-        axios.get("https://auth-development-5a0c3-default-rtdb.firebaseio.com/pillows.json")
-            .then(res => {
-                console.log(res);
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        // axios.get("https://auth-development-5a0c3-default-rtdb.firebaseio.com/pillows.json")
+        //     .then(res => {
+        //         console.log(res);
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //     })
     }
     componentDidUpdate() {
         this.props.onPriceUpdate()
@@ -50,9 +51,6 @@ class Cart extends Component {
         }))
     }
     render() {
-
-
-
 
         let bucket = null;
         if (this.props.cart.length < 1) {
@@ -96,9 +94,7 @@ class Cart extends Component {
                                             {this.state.updateCart ?
                                                 <div className="product_count ">
                                                     <span className="product_count_item " onClick={() => this.decrementValue(i)}> <i className="fa fa-minus"></i></span>
-                                                    <span className="product_count_item value"
-                                                    //type="text" value={value} min="0" max="10" 
-                                                    >
+                                                    <span className="product_count_item value">
                                                         {item.quantity}
                                                     </span>
                                                     <span className="product_count_item" onClick={() => this.incrementValue(i)}> <i className="fa fa-plus"></i></span>
@@ -163,6 +159,7 @@ const mapStateToProps = state => {
     return {
         cart: state.cartDetail.cart,
         totalPrice: state.cartDetail.totalPrice,
+        pillows: state.cartDetail.pillows
     }
 }
 
@@ -171,7 +168,8 @@ const mapDispatchToProps = (dispatch) => {
         onRemoveFromCart: (i) => dispatch(actions.removeFromCart(i)),
         onPriceUpdate: () => dispatch(actions.priceUpdate()),
         onIncrement: (index) => dispatch(actions.increment(index)),
-        onDecrement: (index) => dispatch(actions.decrement(index))
+        onDecrement: (index) => dispatch(actions.decrement(index)),
+        setData: () => dispatch(actions.setData())
     }
 }
 

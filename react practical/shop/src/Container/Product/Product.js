@@ -11,26 +11,36 @@ import { connect, useDispatch, useSelector } from 'react-redux'
 
 //import Search from '../../Components/Filter/Search/Search'
 //import Sort from '../../Components/Filter/Sort/Sort'
- 
+
 
 const Product = (props) => {
+    //  const pillows = useSelector(state => state.cartDetail.pillows); if (props.pillows.length > 0) {
+    //  const dispatch =useDispatch()
+    const [temp, setTemp] = useState([])
 
-    const temp = [...items]
     const [itemList, setItemList] = useState(temp)
     const [copyList1, setCopyList1] = useState(temp);
     const [offSet, setOffSet] = useState(6);
     const [sortBy, setSortby] = useState("");
     const [searchField, setSearchField] = useState("")
 
-    const pillows = useSelector(state => state.cartDetail.pillows);
-    const setData = useDispatch(actions.setData());
-
-    console.log(pillows)
     useEffect(() => {
-        setData();
+        //dispatch(actions.setData())
+        props.setData()
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
+
     }, []);
+    useEffect(() => {
+        setTimeout(() => {
+            setTemp(props.pillows)
+            console.log(props.pillows)
+        }, 1000)
+    }, [props.pillows])
+    //  console.log("pillows", pillows.data);
+
+
+    /************************for infinite scroll****************/
     const handleScroll = (event) => {
         const scrollTop =
             (document.documentElement?.scrollTop) ||
@@ -44,10 +54,10 @@ const Product = (props) => {
             return setOffSet(prev => prev + 6)
         }
     }
-
+    /****************************filter functions********************/
     const reset = () => {
         setSortby('')
-        setItemList(items)
+        setItemList(temp)
         setSearchField("")
 
     }
@@ -113,16 +123,16 @@ const Product = (props) => {
     )
 }
 
-// const mapStateToProps = (state) => {
-//     return {
-//         // pillows: state.CartDetail.pillows
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        pillows: state.cartDetail.pillows
+    }
+}
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         setData: () => dispatch(actions.setData)
-//     }
-// }
+const mapDispatchToProps = dispatch => {
+    return {
+        setData: () => dispatch(actions.setData())
+    }
+}
 
-export default Product
+export default connect(mapStateToProps, mapDispatchToProps)(Product)

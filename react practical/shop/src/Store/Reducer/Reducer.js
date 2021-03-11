@@ -3,13 +3,15 @@ import * as actionTypes from "../Action/actionType";
 
 
 const initialState = {
-    pillows: [],
+    pillows: null,
     cart: [],
     totalPrice: 0,
 }
 
 const setData = (state, action) => {
     console.log(state)
+    console.log("action data", action.data)
+
     return {
         ...state,
         pillows: action.data
@@ -18,6 +20,7 @@ const setData = (state, action) => {
 
 const priceUpdate = (state, action) => {
     var price = 0
+    console.log("pillos", state.pillows)
     state.cart.map((_, i) => {
         price = price + (state.cart[i].cart.price * state.cart[i].quantity)
     })

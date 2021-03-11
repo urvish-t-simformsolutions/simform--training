@@ -1,0 +1,65 @@
+.profile_list_container{
+    width: 100%;
+    height:400px;
+    background-color: #b08ead;
+ 
+}
+
+.profile_list_container h1{
+    font-size: 50px;
+    color:white;
+    margin: auto;
+}
+.user_details{
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+.profile_contain{
+    max-width: 1170px;
+    margin:auto;
+    display: flex;
+}
+
+.user_name{
+    margin-bottom: 40px;
+}
+.detail_name{
+    margin-bottom: 20px;
+}
+
+.func_buttons{
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-top: 120px;
+}
+
+.btn_8{
+    width: 80%;
+    margin: 30px 45px;
+    padding: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #b08ead;
+    border: 1px solid #b08ead;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 400;
+    -webkit-transition: .5s;
+    transition: .5s;
+    
+}
+.btn_8:hover  {
+    outline: none;
+    background-color: transparent;
+    color:#b08ead;
+    text-decoration: none;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.btn_8 i{
+    padding:auto;
+    font-size: 25px;
+    float:right;
+}

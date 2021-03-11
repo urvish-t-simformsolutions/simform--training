@@ -22,7 +22,7 @@ const SignUp = () => {
             setError('')
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push('/')
+            history.push('/profile')
         } catch {
             setError("failed to Login ")
         }
@@ -68,7 +68,7 @@ everyday, and a good example of this is the</p>
                                     <button disabled={loading} type="submit" className="btn_3">
                                         Log In
                                         </button>
-                                    <a className="lost_pass" href="/">forget password?</a>
+                                    <a className="lost_pass" href="/forgetPass">forget password?</a>
                                 </div>
                             </form>
                         </div>
