@@ -4,6 +4,7 @@ export {
     decrement,
     priceUpdate,
     removeFromCart,
-    setData
+    setData,
+    setFormDetails
 }
     from './cartAction'

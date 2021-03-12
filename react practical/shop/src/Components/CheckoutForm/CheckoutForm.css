@@ -19,6 +19,9 @@
     color: #795376;
 }
 
+.checkout_form input:disabled{
+    background-color: rgb(238, 238, 238);
+}
 .field-1 .input{
     border: 1px solid #eee;
     font-size: 14px;

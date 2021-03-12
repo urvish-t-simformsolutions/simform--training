@@ -3,9 +3,20 @@ import * as actionTypes from "../Action/actionType";
 
 
 const initialState = {
+    userDetails: [],
+    userId: null,
     pillows: null,
     cart: [],
     totalPrice: 0,
+}
+
+const setFormDetails = (state, action) => {
+    console.log("userDetail", state.userDetails)
+    return {
+        ...state,
+        userId: action.id,
+        userDetails: action.formDetails
+    }
 }
 
 const setData = (state, action) => {
@@ -53,16 +64,11 @@ const removeFromCart = (state, action) => {
 
 const increment = (state, action) => {
     state.cart.map((item, i) => {
-        // console.log(i)
-        // console.log(action.index)
-        //console.log("before", item.quantity)
         if (i === action.index && item.quantity < 10) {
             item.quantity = item.quantity + 1;
         }
-        //  console.log("after", item.quantity)
     })
     priceUpdate(state, action)
-    // console.log(state)
     return {
         ...state
     }
@@ -89,6 +95,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.PRICE_UPDATE: return priceUpdate(state, action)
         case actionTypes.REMOVE_FROM_CART: return removeFromCart(state, action)
         case actionTypes.SET_DATA: return setData(state, action)
+     //   case actionTypes.SET_FORM_DETAILS: return setFormDetails(state, action)
+
 
 
         default:

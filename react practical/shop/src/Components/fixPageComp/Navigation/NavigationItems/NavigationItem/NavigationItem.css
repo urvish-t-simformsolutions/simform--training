@@ -35,12 +35,16 @@
         padding: 16px 10px;
         /* border-bottom: 4px solid transparent; */
     }
+
     
-    .NavigationItem a:hover,
-    .NavigationItem a:active,
+    .NavigationItem a:hover
+    {
+        color: #836080;
+        transition: all 0.5s ease-in;
+
+    }
     .NavigationItem a.active {
         /* border-bottom: 4px solid #836080; */
         color: #836080;
-        transition: all 0.5s ease-in;
     }
 }

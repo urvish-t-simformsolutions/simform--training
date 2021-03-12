@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import './Login.css'
 import { useAuth } from '../../Context/AuthContext'
@@ -10,11 +10,13 @@ const SignUp = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
 
-    const { login } = useAuth()
+    const { login, currentUser } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useHistory()
-
+    useEffect(() => {
+        console.log(currentUser);
+    })
     async function handleSubmit(e) {
         e.preventDefault()
 

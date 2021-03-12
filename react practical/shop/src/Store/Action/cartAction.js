@@ -17,6 +17,23 @@ export const setData = () => {
             })
     }
 }
+
+export const setFormDetails = (details) => {
+    console.log("detailset")
+    return dispatch => {
+        axios.post("/userDetails.json", details)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+}
+
+export const updateFormDetails = ()=>{
+    
+}
 export const assignData = (data) => {
     return {
         type: actionTypes.SET_DATA,
