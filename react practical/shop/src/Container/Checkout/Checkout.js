@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { toast } from 'react-toastify';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import CheckoutForm from '../../Components/CheckoutForm/CheckoutForm';
@@ -10,9 +11,20 @@ class Checkout extends Component {
         super(props);
         this.state = {}
     }
-componentDidMount(){
-   
-}
+    componentDidMount() {
+
+    }
+    orderPlaced = () => {
+        toast.dark('Order has been placed', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+        })
+    }
     render() {
         return (
             <>
@@ -61,7 +73,7 @@ componentDidMount(){
                                             <span>Rs:{this.props.totalPrice + 50}</span>
                                         </li>
                                     </ul>
-                                    <Link className="btn_7" to="/checkout">Proceed for Payment</Link>
+                                    <Link className="btn_7" to="/checkout" onClick={this.orderPlaced}>Proceed for Payment</Link>
                                 </div>
                             </div>
                         </div>

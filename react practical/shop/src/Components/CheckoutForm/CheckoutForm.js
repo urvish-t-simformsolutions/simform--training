@@ -5,9 +5,11 @@ import './CheckoutForm.css'
 const CheckoutForm = (props) => {
 
 
+    const { currentUser } = useAuth()
     const [formDetails, setFormDetails] = useState({
         firstName: '',
         lastName: '',
+        // email: currentUser.email,
         phoneNo: '',
         adLine1: '',
         adLine2: '',
@@ -26,16 +28,10 @@ const CheckoutForm = (props) => {
             ...formDetails,
             [e.target.name]: e.target.value
         })
-
     }
-    console.log(formDetails)
-
-
-    //  const { currentUser } = useAuth()
-
     let value = formDetails.email
-    if (props.currentUser) {
-        value = props.currentUser.email
+    if (currentUser) {
+        value = currentUser.email
     }
 
     return (

@@ -14,29 +14,32 @@ import { connect, useDispatch, useSelector } from 'react-redux'
 
 
 const Product = (props) => {
-    //  const pillows = useSelector(state => state.cartDetail.pillows); if (props.pillows.length > 0) {
-    //  const dispatch =useDispatch()
+
     const [temp, setTemp] = useState([])
 
-    const [itemList, setItemList] = useState(temp)
-    const [copyList1, setCopyList1] = useState(temp);
+    const [productList, setProductList] = useState(temp)
     const [offSet, setOffSet] = useState(6);
-    const [sortBy, setSortby] = useState("");
+    const [sortBy, setSortby] = useState("")
     const [searchField, setSearchField] = useState("")
 
     useEffect(() => {
-        //dispatch(actions.setData())
-        props.setData()
+        if (searchField === "") {
+            props.setData()
+        }
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll)
 
     }, []);
     useEffect(() => {
-        setTimeout(() => {
+        if (props.pillows) {
             setTemp(props.pillows)
-            console.log(props.pillows)
-        }, 1000)
-    }, [props.pillows])
+            setProductList(props.pillows)
+        }
+    }, [props.pillows, productList])
+
+    useEffect(() => {
+
+    }, [productList])
     //  console.log("pillows", pillows.data);
 
 
@@ -57,35 +60,32 @@ const Product = (props) => {
     /****************************filter functions********************/
     const reset = () => {
         setSortby('')
-        setItemList(temp)
+        sortArr('')
+        // setProductList(props.pillows)
         setSearchField("")
 
     }
 
     const searchTerm = value => {
+        props.setData(value)
         setSearchField(value)
-        if (value === '') {
-            setItemList(temp)
-        }
-        else {
-            const newTerm = copyList1.filter((item) => item.type.toLowerCase().includes(value.toLowerCase()))
-            setItemList(newTerm)
-        }
+        sortArr(sortBy)
     }
 
     const sortArr = type => {
         setSortby(type)
+        console.log("type", type)
         if (type === 'High to Low') {
-            const sorted = copyList1.sort((a, b) => b.price - a.price)
-            setItemList(JSON.parse(JSON.stringify(sorted)))
+            const sorted = productList.sort((a, b) => b.price - a.price)
+            setProductList(JSON.parse(JSON.stringify(sorted)))
         }
         else if (type === 'Low to High') {
-            const sorted = copyList1.sort((a, b) => a.price - b.price)
-            setItemList(JSON.parse(JSON.stringify(sorted)))
+            const sorted = productList.sort((a, b) => a.price - b.price)
+            setProductList(JSON.parse(JSON.stringify(sorted)))
         }
         else if (type === '') {
-            const sorted = copyList1.sort((a, b) => a.id - b.id)
-            setItemList(JSON.parse(JSON.stringify(sorted)))
+            const sorted = productList.sort((a, b) => a.id - b.id)
+            setProductList(JSON.parse(JSON.stringify(sorted)))
         }
     }
 
@@ -103,7 +103,7 @@ const Product = (props) => {
                         <Filter sortBy={sortBy} sortArr={sortArr} searchTerm={searchTerm} reset={reset} searchField={searchField} />
                     </div>
                     <div className="product_list" onScroll={handleScroll}>
-                        <ProductItems list={itemList.slice(0, offSet)} />
+                        <ProductItems list={productList.slice(0, offSet)} />
                     </div>
 
                 </div>
@@ -131,7 +131,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setData: () => dispatch(actions.setData())
+        setData: (value) => dispatch(actions.setData(value))
     }
 }
 

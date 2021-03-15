@@ -45,10 +45,10 @@ const Profile = (props) => {
         })
 
     }
-    console.log(formDetails)
+    // console.log(formDetails)
 
     const toggleHandler = () => {
-        console.log(userDetails);
+        // console.log(userDetails);
         if (enterDetails) {
             if (userDetails.id === null) {
                 toast.dark('Enter your details to submit', {
@@ -60,7 +60,7 @@ const Profile = (props) => {
                     draggable: true,
                     progress: undefined,
                 });
-            } else {
+            } else if (userDetails.id !== props.userId) {
                 props.setForm(userDetails)
                 setDisabled(true)
                 setEnterDetails(!enterDetails)
@@ -68,6 +68,7 @@ const Profile = (props) => {
         } else {
             setDisabled(false)
             setEnterDetails(!enterDetails)
+            props.updateFormDetails(userDetails)
 
         }
     }
@@ -161,10 +162,20 @@ const Profile = (props) => {
     </>);
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = (state) => {
     return {
-        setForm: (details) => dispatch(actions.setFormDetails(details))
+        userId: state.cartDetail.userId,
+        savedUserDetails: state.cartDetail.userDetails
+
     }
 }
 
-export default connect(null, mapDispatchToProps)(Profile);
+const mapDispatchToProps = dispatch => {
+    return {
+        setForm: (details) => dispatch(actions.setFormDetails(details)),
+        getFromDetails: () => dispatch(actions.showFormDetails()),
+        updateFormDetails: (details) => dispatch(actions.updateFormDetails(details))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

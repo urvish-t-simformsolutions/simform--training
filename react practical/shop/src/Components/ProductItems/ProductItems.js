@@ -6,7 +6,7 @@ const ProductItems = (props) => {
 
     return (
         <div className='list_container'>
-            {props.list.map((itemList) => {
+            {props?.list?.map((itemList) => {
                 return (
                     <div key={itemList.id} className="list">
                         <div className="grid-col">

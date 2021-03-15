@@ -10,8 +10,12 @@ const initialState = {
     totalPrice: 0,
 }
 
+const updateFormDetails = (state, action) => {
+    return {
+        ...state,
+    }
+}
 const setFormDetails = (state, action) => {
-    console.log("userDetail", state.userDetails)
     return {
         ...state,
         userId: action.id,
@@ -20,8 +24,8 @@ const setFormDetails = (state, action) => {
 }
 
 const setData = (state, action) => {
-    console.log(state)
-    console.log("action data", action.data)
+    //console.log(state)
+    //console.log("action data", action.data)
 
     return {
         ...state,
@@ -31,7 +35,7 @@ const setData = (state, action) => {
 
 const priceUpdate = (state, action) => {
     var price = 0
-    console.log("pillos", state.pillows)
+    //  console.log("pillos", state.pillows)
     state.cart.map((_, i) => {
         price = price + (state.cart[i].cart.price * state.cart[i].quantity)
     })
@@ -42,7 +46,7 @@ const priceUpdate = (state, action) => {
 }
 
 const addToCart = (state, action) => {
-    console.log("bbhhb", action)
+    //console.log("bbhhb", action)
     return {
         ...state,
         cart: state.cart.concat([action.cart])
@@ -95,7 +99,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.PRICE_UPDATE: return priceUpdate(state, action)
         case actionTypes.REMOVE_FROM_CART: return removeFromCart(state, action)
         case actionTypes.SET_DATA: return setData(state, action)
-     //   case actionTypes.SET_FORM_DETAILS: return setFormDetails(state, action)
+        case actionTypes.UPDATE_FORM_DETAILS: return updateFormDetails(state, action)
+        case actionTypes.SET_FORM_DETAILS: return setFormDetails(state, action)
 
 
 
