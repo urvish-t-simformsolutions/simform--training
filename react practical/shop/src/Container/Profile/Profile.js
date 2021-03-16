@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../../Context/AuthContext'
 import { useHistory } from 'react-router-dom'
 import './profile.css'
 import * as actions from '../../Store/Action'
 import { connect } from 'react-redux';
+//import ProfileForm from '../../Components/profileForm/ProfileForm';
 
 const Profile = (props) => {
     toast.configure()
@@ -27,10 +28,22 @@ const Profile = (props) => {
         city: '',
         state: '',
         pincode: '',
-
     })
 
     const [userDetails, setUserDetails] = useState({ details: null, id: null })
+
+    useEffect(() => {
+        props.checkFormDetails(currentUser.email)
+        if (props.userDetailsDb) {
+            setEnterDetails(true)
+            console.log(props.userDetailsDb)
+            setFormDetails(props.userDetailsDb.details)
+            setUserDetails(props.userDetailsDb)
+        } else {
+            setEnterDetails(false)
+        }
+    }, [])
+
 
     const setValue = (e) => {
 
@@ -43,37 +56,28 @@ const Profile = (props) => {
             id: currentUser.uid,
             email: currentUser.email
         })
-
     }
     // console.log(formDetails)
 
     const toggleHandler = () => {
-        // console.log(userDetails);
+
+        //  console.log(userDetails);
         if (enterDetails) {
-            if (userDetails.id === null) {
-                toast.dark('Enter your details to submit', {
-                    position: "top-center",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: true,
-                    progress: undefined,
-                });
-            } else if (userDetails.id !== props.userId) {
+            if (userDetails.id !== props.userId) {
                 props.setForm(userDetails)
-                setDisabled(true)
                 setEnterDetails(!enterDetails)
+                setDisabled(true)
             }
         } else {
-            setDisabled(false)
             setEnterDetails(!enterDetails)
-            props.updateFormDetails(userDetails)
+            setDisabled(false)
+           // props.setForm(userDetails)
 
+            //  props.updateFormDetails(userDetails)
         }
     }
 
-    let value = formDetails.email
+    let value = ""
     if (currentUser) {
         value = currentUser.email
     }
@@ -98,48 +102,70 @@ const Profile = (props) => {
             <div className="profile_contain">
                 <div className="user_details">
                     <div className="">
-                        <h1 className="user_name">hi,{formDetails.firstName}</h1>
+                        <h1 className="user_name">hi,
+                        {formDetails.firstName}
+                        </h1>
                         <h4 className="detail_name"> your details</h4>
                     </div>
+                    {/* <ProfileForm formDetails={formDetails} setValue={setValue} disabled={disabled} value={value} /> */}
                     <form className="checkout_form" method="post">
                         <div className="field-1">
-                            <input className="input" onChange={(e) => { setValue(e) }} type="text" placeholder="First name" name="firstName" required disabled={disabled} />
+                            <input className="input" onChange={(e) => { setValue(e) }}
+                                value={formDetails.firstName} type="text" placeholder="First name"
+                                name="firstName" required disabled={disabled} />
                         </div>
                         <div className="field-1">
-                            <input className="input" onChange={(e) => { setValue(e) }} type="text" placeholder="Last name" name="lastName" required disabled={disabled} />
+                            <input className="input" onChange={(e) => { setValue(e) }}
+                                value={formDetails.lastName} type="text" placeholder="Last name"
+                                name="lastName" required disabled={disabled} />
                         </div>
                         <div className="field-1">
-                            <input className="input" onChange={(e) => { setValue(e) }} type="text" placeholder="Phone Number" name="phoneNumber" length="10" required disabled={disabled} />
+                            <input className="input" onChange={(e) => { setValue(e) }}
+                                value={formDetails.phoneNo} type="text" placeholder="Phone No"
+                                name="phoneNo" length="10" required disabled={disabled} />
                         </div>
                         <div className="field-1">
-                            <input className="input" onChange={(e) => { setValue(e) }} type="email" placeholder="Email" name="email" value={value} disabled />
+                            <input className="input" onChange={(e) => { setValue(e) }}
+                                type="email" placeholder="Email" name="email"
+                                value={value} disabled />
                         </div>
                         <div className="field-2">
-                            <input className="input" onChange={(e) => { setValue(e) }} type="text" placeholder="Address line 1" name="adLine1" required disabled={disabled} />
+                            <input className="input" onChange={(e) => { setValue(e) }}
+                                value={formDetails.adLine1} type="text" placeholder="Address line 1"
+                                name="adLine1" required disabled={disabled} />
                         </div>
                         <div className="field-2">
-                            <input className="input" onChange={(e) => { setValue(e) }} type="text" placeholder="Address line 2" name="adLine2" required disabled={disabled} />
+                            <input className="input" onChange={(e) => { setValue(e) }}
+                                value={formDetails.adLine2} type="text" placeholder="Address line 2"
+                                name="adLine2" required disabled={disabled} />
                         </div>
                         <div className="field-2">
-                            <input className="input" onChange={(e) => { setValue(e) }} type="text" placeholder="Address line 3" name="adLine3" required disabled={disabled} />
+                            <input className="input" onChange={(e) => { setValue(e) }}
+                                value={formDetails.adLine3} type="text" placeholder="Address line 3"
+                                name="adLine3" required disabled={disabled} />
                         </div>
                         <div className="field-1">
-                            <select name="country" onClick={(e) => { setValue(e) }} required disabled={disabled}>
+                            <select name="country" onClick={(e) => { setValue(e) }}
+                                defaultValue={formDetails.country} required disabled={disabled}>
                                 <option value="india">india</option>
                             </select>
                         </div>
                         <div className="field-1">
-                            <select name="state" onClick={(e) => { setValue(e) }} required disabled={disabled}>
+                            <select name="state" onClick={(e) => { setValue(e) }}
+                                defaultValue={formDetails.state} required disabled={disabled}>
                                 <option value="gujarat">gujarat</option>
                             </select>
                         </div>
                         <div className="field-1">
-                            <select name="city" onClick={(e) => { setValue(e) }} required disabled={disabled}>
-                                <option value="india">Ahmedabad</option>
+                            <select name="city" onClick={(e) => { setValue(e) }}
+                                defaultValue={formDetails.city} required disabled={disabled}>
+                                <option value="ahmedabad">Ahmedabad</option>
                             </select>
                         </div>
                         <div className="field-1">
-                            <input className="input" onChange={(e) => { setValue(e) }} type="text" placeholder="Pincode" name="pincode" length="6" required disabled={disabled} />
+                            <input className="input" onChange={(e) => { setValue(e) }}
+                                value={formDetails.pincode} type="text" placeholder="Pincode"
+                                name="pincode" length="6" required disabled={disabled} />
                         </div>
                     </form>
                 </div>
@@ -164,17 +190,18 @@ const Profile = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        userId: state.cartDetail.userId,
-        savedUserDetails: state.cartDetail.userDetails
-
+        userDetailsDb: state.profileDetail.userDetails,
+        userId: state.profileDetail.userId,
+        disabled: state.profileDetail.disabled
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
+        checkFormDetails: (email) => dispatch(actions.checkFormDetails(email)),
         setForm: (details) => dispatch(actions.setFormDetails(details)),
         getFromDetails: () => dispatch(actions.showFormDetails()),
-        updateFormDetails: (details) => dispatch(actions.updateFormDetails(details))
+        //  updateFormDetails: (details) => dispatch(actions.updateFormDetails(details))
     }
 }
 

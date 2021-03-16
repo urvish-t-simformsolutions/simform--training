@@ -3,35 +3,29 @@ import * as actionTypes from "../Action/actionType";
 
 
 const initialState = {
-    userDetails: [],
-    userId: null,
-    pillows: null,
     cart: [],
     totalPrice: 0,
 }
 
-const updateFormDetails = (state, action) => {
-    return {
-        ...state,
-    }
-}
-const setFormDetails = (state, action) => {
-    return {
-        ...state,
-        userId: action.id,
-        userDetails: action.formDetails
-    }
-}
+// const updateFormDetails = (state, action) => {
+//     return {
+//         ...state,
+//     }
+// }
+// const setFormDetails = (state, action) => {
+//     return {
+//         ...state,
+//         userId: action.id,
+//         userDetails: action.formDetails
+//     }
+// }
 
-const setData = (state, action) => {
-    //console.log(state)
-    //console.log("action data", action.data)
-
-    return {
-        ...state,
-        pillows: action.data
-    }
-}
+// const setData = (state, action) => {
+//     return {
+//         ...state,
+//         pillows: action.data
+//     }
+// }
 
 const priceUpdate = (state, action) => {
     var price = 0
@@ -98,12 +92,9 @@ const reducer = (state = initialState, action) => {
         case actionTypes.DECREMENT_QUANTITY: return decrement(state, action)
         case actionTypes.PRICE_UPDATE: return priceUpdate(state, action)
         case actionTypes.REMOVE_FROM_CART: return removeFromCart(state, action)
-        case actionTypes.SET_DATA: return setData(state, action)
-        case actionTypes.UPDATE_FORM_DETAILS: return updateFormDetails(state, action)
-        case actionTypes.SET_FORM_DETAILS: return setFormDetails(state, action)
-
-
-
+        //case actionTypes.SET_DATA: return setData(state, action)
+        // case actionTypes.UPDATE_FORM_DETAILS: return updateFormDetails(state, action)
+        // case actionTypes.SET_FORM_DETAILS: return setFormDetails(state, action)
         default:
             return state
     }

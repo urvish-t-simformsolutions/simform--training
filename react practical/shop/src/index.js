@@ -5,12 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from "redux";
-import reducer from "./Store/Reducer/Reducer"
+import cartReducer from "./Store/Reducer/cartReducer"
 import { combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'
+import profileReducer from './Store/Reducer/profileReducer';
+import productReducer from './Store/Reducer/productReducer';
 
 const rootReducer = combineReducers({
-  cartDetail: reducer
+  cartDetail: cartReducer,
+  profileDetail: profileReducer,
+  productData: productReducer
 })
 const store = createStore(rootReducer,
   applyMiddleware(thunk)

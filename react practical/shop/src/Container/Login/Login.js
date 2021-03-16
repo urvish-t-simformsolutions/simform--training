@@ -2,10 +2,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import './Login.css'
+import * as actions from '../../Store/Action'
 import { useAuth } from '../../Context/AuthContext'
+import { checkFormDetails } from '../../Store/Action'
+import { connect } from 'react-redux'
 
 
-const SignUp = () => {
+const SignUp = (props) => {
     const [alertCss, setAlertCss] = useState("danger");
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -24,6 +27,7 @@ const SignUp = () => {
             setError('')
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
+            // props.checkFormDetails(emailRef.current.value)
             history.push('/profile')
         } catch {
             setError("failed to Login ")
@@ -80,4 +84,10 @@ everyday, and a good example of this is the</p>
         </>
     )
 }
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         checkFormDetails: (email) => dispatch(actions.checkFormDetails(email))
+//     }
+// }
 export default SignUp

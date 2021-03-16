@@ -4,9 +4,16 @@ export {
     decrement,
     priceUpdate,
     removeFromCart,
-    setData,
+
+} from './cartAction'
+
+export {
+    checkFormDetails,
     setFormDetails,
     showFormDetails,
-    updateFormDetails
-}
-    from './cartAction'
+    // updateFormDetails
+} from './profileAction'
+
+export {
+    setData
+} from './productAction'

@@ -19,12 +19,12 @@ const Product = (props) => {
 
     const [productList, setProductList] = useState(temp)
     const [offSet, setOffSet] = useState(6);
-    const [sortBy, setSortby] = useState("")
-    const [searchField, setSearchField] = useState("")
+    const [sortBy, setSortby] = useState('')
+    const [searchField, setSearchField] = useState('')
 
     useEffect(() => {
-        if (searchField === "") {
-            props.setData()
+        if (searchField === '') {
+            props.setData(searchField, sortBy)
         }
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll)
@@ -35,11 +35,11 @@ const Product = (props) => {
             setTemp(props.pillows)
             setProductList(props.pillows)
         }
-    }, [props.pillows, productList])
+    }, [props.pillows, productList, sortBy, searchField])
 
     useEffect(() => {
 
-    }, [productList])
+    }, [productList, sortBy, searchField])
     //  console.log("pillows", pillows.data);
 
 
@@ -62,31 +62,20 @@ const Product = (props) => {
         setSortby('')
         sortArr('')
         // setProductList(props.pillows)
-        setSearchField("")
+        setSearchField('')
 
     }
 
     const searchTerm = value => {
-        props.setData(value)
+        props.setData(value, sortBy)
         setSearchField(value)
-        sortArr(sortBy)
+        //sortArr(sortBy)
     }
 
     const sortArr = type => {
+        props.setData(searchField, type)
         setSortby(type)
-        console.log("type", type)
-        if (type === 'High to Low') {
-            const sorted = productList.sort((a, b) => b.price - a.price)
-            setProductList(JSON.parse(JSON.stringify(sorted)))
-        }
-        else if (type === 'Low to High') {
-            const sorted = productList.sort((a, b) => a.price - b.price)
-            setProductList(JSON.parse(JSON.stringify(sorted)))
-        }
-        else if (type === '') {
-            const sorted = productList.sort((a, b) => a.id - b.id)
-            setProductList(JSON.parse(JSON.stringify(sorted)))
-        }
+    
     }
 
     return (
@@ -125,13 +114,13 @@ const Product = (props) => {
 
 const mapStateToProps = state => {
     return {
-        pillows: state.cartDetail.pillows
+        pillows: state.productData.pillows
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        setData: (value) => dispatch(actions.setData(value))
+        setData: (search, sort) => dispatch(actions.setData(search, sort))
     }
 }
 
