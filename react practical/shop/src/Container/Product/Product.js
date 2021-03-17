@@ -30,17 +30,15 @@ const Product = (props) => {
         return () => window.removeEventListener("scroll", handleScroll)
 
     }, []);
+
     useEffect(() => {
         if (props.pillows) {
             setTemp(props.pillows)
             setProductList(props.pillows)
         }
-    }, [props.pillows, productList, sortBy, searchField])
+    }, [props.pillows])
 
-    useEffect(() => {
 
-    }, [productList, sortBy, searchField])
-    //  console.log("pillows", pillows.data);
 
 
     /************************for infinite scroll****************/
@@ -75,7 +73,7 @@ const Product = (props) => {
     const sortArr = type => {
         props.setData(searchField, type)
         setSortby(type)
-    
+
     }
 
     return (

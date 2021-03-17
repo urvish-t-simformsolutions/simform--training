@@ -4,11 +4,15 @@ import axios from "../../axios-data.js"
 
 export const checkFormDetails = (email) => {
     return dispatch => {
+        dispatch({ type: actionTypes.CHECK_DETAILS_START })
         axios.get("/userDetails.json")
             .then(res => {
                 Object.keys(res.data).map((item) => {
                     if (email === res.data[item].email) {
                         dispatch(verifyingDetails(res.data[item], email))
+                    }
+                    else {
+                        dispatch({ type: actionTypes.NEW_USER })
                     }
                 })
             })
@@ -19,9 +23,7 @@ export const checkFormDetails = (email) => {
 }
 
 const verifyingDetails = (userData, email) => {
-
     return {
-
         type: actionTypes.CHECK_FORM_DETAILS,
         userDetails: userData
     }
@@ -40,46 +42,41 @@ export const showFormDetails = () => {
     }
 }
 
-export const setFormDetails = (details) => {
-    console.log("detailset")
+export const clearOnLogout = () => {
+    return {
+        type: actionTypes.CLEAR_ON_LOGOUT
+    }
+}
+
+export const setFormDetails = (details) => {    //console.log("detailset")
     return dispatch => {
         axios.get("/userDetails.json")
-            .then(res => {
-                // console.log("get data", res.data)
-                // console.log(res.data.name);
+            .then(res => {                // console.log("get data", res.data)                //console.log(res.data.name);
                 if (res.data) {
                     let key = Object.keys(res.data)
-                    Object.keys(res.data).map((item, index) => {
-                        // console.log("keys", item);
-                        key = item
-                        if (details.id === res.data[item].id) {
+                    let count = 0
+                    Object.keys(res.data).map((item, index) => {        //   console.log("keys", item);
+                        key = item                       // console.log(details.id, res.data[item].id);
+                        if (details.id === res.data[item].id) {                          //  console.log("put");
                             axios.put("/userDetails/" + key + "/details.json", details.details)
-                                .then(res => {
-                                    console.log(res)
-                                })
-                                .catch(error => {
-                                    console.log(error)
-                                })
+                            dispatch({ type: actionTypes.CHECK_FORM_DETAILS })
+                            count = 0                          //  console.log("count in put", count)
+                        } else {
+                            count = count + 1                          //  console.log("count", count)
                         }
                     })
+                    if (count !== 0) {
+                        count = 0                       // console.log("post", count);
+                        axios.post("/userDetails.json", details)
+                        dispatch({ type: actionTypes.CHECK_FORM_DETAILS })
+                    }
                 } else {
+                    console.log("post");
                     axios.post("/userDetails.json", details)
-                        .then(res => {
-                            console.log(res)
-                        })
-                        .catch(error => {
-                            console.log(error)
-                        })
+                    dispatch({ type: actionTypes.CHECK_FORM_DETAILS })
                 }
             })
     }
-    // axios.post("/userDetails.json", details)
-    //     .then(res => {
-    //         console.log(res)
-    //     })
-    //     .catch(error => {
-    //         console.log(error)
-    //     })
 }
 
 // export const updateFormDetails = (details) => {

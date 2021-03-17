@@ -4,7 +4,7 @@ import './profileForm.css'
 const ProfileForm = (props) => {
 
     return (
-        <form className="checkout_form" method="post" >
+        <form className="checkout_form" method="post">
             <div className="field-1">
                 <input className="input" onChange={(e) => { props.setValue(e) }}
                     value={props.formDetails.firstName} type="text" placeholder="First name"
@@ -18,8 +18,7 @@ const ProfileForm = (props) => {
             <div className="field-1">
                 <input className="input" onChange={(e) => { props.setValue(e) }}
                     value={props.formDetails.phoneNo} type="text" placeholder="Phone Number"
-                    name="phoneNumber"
-                    // length="10" 
+                    name="phoneNo" length="10"
                     required disabled={props.disabled} />
             </div>
             <div className="field-1">
@@ -44,23 +43,23 @@ const ProfileForm = (props) => {
             </div>
             <div className="field-1">
                 <select name="country" onClick={(e) => { props.setValue(e) }}
-                    // value={props.formDetails.country} 
+                    defaultValue={props.formDetails.country}
                     required disabled={props.disabled}>
-                    <option defaultValue="india" >india</option>
+                    <option value="india" >india</option>
                 </select>
             </div>
             <div className="field-1">
                 <select name="state" onClick={(e) => { props.setValue(e) }}
-                    // value={props.formDetails.state} 
+                    defaultValue={props.formDetails.state}
                     required disabled={props.disabled}>
-                    <option defaultValue="gujarat">gujarat</option>
+                    <option value="gujarat">gujarat</option>
                 </select>
             </div>
             <div className="field-1">
                 <select name="city" onClick={(e) => { props.setValue(e) }}
-                    //  value={props.formDetails.city} 
+                    defaultValue={props.formDetails.city}
                     required disabled={props.disabled}>
-                    <option defaultValue="ahmedabad">Ahmedabad</option>
+                    <option value="ahmedabad">Ahmedabad</option>
                 </select>
             </div>
             <div className="field-1">

@@ -11,6 +11,7 @@ export {
     checkFormDetails,
     setFormDetails,
     showFormDetails,
+    clearOnLogout
     // updateFormDetails
 } from './profileAction'
 
