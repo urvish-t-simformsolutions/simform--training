@@ -43,21 +43,21 @@ const ProfileForm = (props) => {
             </div>
             <div className="field-1">
                 <select name="country" onClick={(e) => { props.setValue(e) }}
-                    defaultValue={props.formDetails.country}
+                    defaultValue="india"
                     required disabled={props.disabled}>
                     <option value="india" >india</option>
                 </select>
             </div>
             <div className="field-1">
                 <select name="state" onClick={(e) => { props.setValue(e) }}
-                    defaultValue={props.formDetails.state}
+                    defaultValue="gujarat"
                     required disabled={props.disabled}>
                     <option value="gujarat">gujarat</option>
                 </select>
             </div>
             <div className="field-1">
                 <select name="city" onClick={(e) => { props.setValue(e) }}
-                    defaultValue={props.formDetails.city}
+                    defaultValue="ahmebadabad"
                     required disabled={props.disabled}>
                     <option value="ahmedabad">Ahmedabad</option>
                 </select>
